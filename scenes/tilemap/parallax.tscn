@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=3 uid="uid://1yfvp4qlm3ea"]
+
+[ext_resource type="Texture2D" uid="uid://dvpqg13yympuh" path="res://assets/tilesets/Clouds/Clouds 1/1.png" id="1_xnhl5"]
+[ext_resource type="Texture2D" uid="uid://c1q6p3skdu1qp" path="res://assets/tilesets/Clouds/Clouds 1/2.png" id="2_a3or8"]
+[ext_resource type="Texture2D" uid="uid://55fmuxemqjqs" path="res://assets/tilesets/Clouds/Clouds 1/4.png" id="3_egp5a"]
+[ext_resource type="Shader" path="res://shader/parallax.gdshader" id="3_v0dmy"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_n7lm8"]
+shader = ExtResource("3_v0dmy")
+shader_parameter/move_speed = 0.09
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_shy37"]
+shader = ExtResource("3_v0dmy")
+shader_parameter/move_speed = 0.03
+
+[node name="parallax" type="CanvasLayer"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(864, 486)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_xnhl5")
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(864, 486)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
+texture_repeat = 3
+material = SubResource("ShaderMaterial_n7lm8")
+position = Vector2(0, -1)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_a3or8")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(864, 486)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+texture_repeat = 3
+material = SubResource("ShaderMaterial_shy37")
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("3_egp5a")
