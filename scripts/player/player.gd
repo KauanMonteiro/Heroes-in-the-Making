@@ -14,9 +14,8 @@ var is_die = false
 @export var roll_cooldown := 3.0
 @export var roll_speed := 150
 var roll_time_left := 0.0
-@export var push_force := 50
-@onready var area = $Area2D
-
+@export var dano_max:= 1
+@export var dano_min := 0.5
 func _ready():
 	_state_machine = _animation_tree["parameters/playback"]
 
@@ -34,6 +33,7 @@ func _physics_process(delta) -> void:
 	_move(delta)
 	die()
 	move_and_slide() 
+	push()
 
 func _move(_delta) -> void:
 	var _direction: Vector2 = Vector2(
@@ -80,9 +80,15 @@ func _on_animation_tree_animation_finished(_attack) -> void:
 
 func _on_attack_body_entered(body):
 	if body.is_in_group("enemies"):
-		body.life -= randf_range(0.5,1.0)
+		body.life -= randf_range(dano_min,dano_max)
 
 func die():
 	is_die = true
 	if life <=0:
 		get_tree().reload_current_scene()
+
+func push():
+	for objects in get_slide_collision_count():
+		var collision = get_slide_collision(objects)
+		if collision.get_collider() is Pushables:
+			collision.get_collider().slide_object(-collision.get_normal())

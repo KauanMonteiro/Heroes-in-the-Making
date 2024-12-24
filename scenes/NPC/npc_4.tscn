@@ -1,0 +1,85 @@
+[gd_scene load_steps=11 format=3 uid="uid://c10v1rawmw5n5"]
+
+[ext_resource type="Script" path="res://scripts/npc/npc.gd" id="1_1vhow"]
+[ext_resource type="Texture2D" uid="uid://blmdfmjda2ld5" path="res://assets/NPC/Main Character/Character_Idle.png" id="2_xj3oc"]
+[ext_resource type="FontFile" uid="uid://cxv5cjbfxvhip" path="res://assets/fonts/antiquity-print.ttf" id="3_lo1wt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t1oea"]
+atlas = ExtResource("2_xj3oc")
+region = Rect2(0, 96, 40, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lvcuq"]
+atlas = ExtResource("2_xj3oc")
+region = Rect2(40, 96, 40, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w15n8"]
+atlas = ExtResource("2_xj3oc")
+region = Rect2(80, 96, 40, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7xwk8"]
+atlas = ExtResource("2_xj3oc")
+region = Rect2(120, 96, 40, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i5c73"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t1oea")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lvcuq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w15n8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7xwk8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0xhjh"]
+radius = 52.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xishe"]
+size = Vector2(20, 38)
+
+[node name="npc 4" type="StaticBody2D"]
+script = ExtResource("1_1vhow")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_i5c73")
+frame_progress = 0.73664
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_0xhjh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_xishe")
+debug_color = Color(0.998937, 0, 0.128371, 0.42)
+
+[node name="Node2D" type="Node2D" parent="."]
+scale = Vector2(0.5, 0.5)
+
+[node name="Label" type="Label" parent="Node2D"]
+offset_left = -110.0
+offset_top = -188.0
+offset_right = 329.0
+offset_bottom = -2.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_lo1wt")
+text = "Nunca imaginei dizer isso, 
+você era mais importante 
+para mim do que tudo.
+E agora, é tarde demais.
+Queria ter falado 
+enquanto ainda estava aqui."
+metadata/_edit_use_anchors_ = true
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

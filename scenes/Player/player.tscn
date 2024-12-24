@@ -1684,6 +1684,7 @@ states/run/position = Vector2(367, 174)
 graph_offset = Vector2(-184, 22)
 
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("_animation_tree")]
+collision_mask = 5
 script = ExtResource("1_bnlev")
 _animation_tree = NodePath("AnimationTree")
 
