@@ -1252,7 +1252,7 @@ blend_point_1/pos = Vector2(1, 0)
 blend_point_2/node = SubResource("AnimationNodeAnimation_icmq7")
 blend_point_2/pos = Vector2(0, 1)
 blend_point_3/node = SubResource("AnimationNodeAnimation_8naw3")
-blend_point_3/pos = Vector2(0, -0.9)
+blend_point_3/pos = Vector2(0, -1)
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_bfv1j"]
 animation = &"idler_left"
@@ -1324,7 +1324,7 @@ states/idle/position = Vector2(213, 83)
 states/run/node = SubResource("AnimationNodeBlendSpace2D_h0ws5")
 states/run/position = Vector2(336, 201)
 transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_5qufx"), "die", "End", SubResource("AnimationNodeStateMachineTransition_lt0hx"), "attack", "idle", SubResource("AnimationNodeStateMachineTransition_podot")]
-graph_offset = Vector2(-185, -77)
+graph_offset = Vector2(-185, -66)
 
 [node name="slime ghost" type="CharacterBody2D" node_paths=PackedStringArray("_animation_tree") groups=["enemies"]]
 script = ExtResource("1_kspoa")

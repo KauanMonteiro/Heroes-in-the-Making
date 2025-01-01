@@ -1,7 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://bkplimv7l2dh7"]
+[gd_scene load_steps=10 format=3 uid="uid://bkplimv7l2dh7"]
 
-[ext_resource type="Script" path="res://scripts/npc/npc.gd" id="1_f5fnm"]
-[ext_resource type="FontFile" uid="uid://cxv5cjbfxvhip" path="res://assets/fonts/antiquity-print.ttf" id="2_en13l"]
+[ext_resource type="Script" path="res://scripts/npc/npc_3.gd" id="1_2nb5l"]
 [ext_resource type="Texture2D" uid="uid://fkljkcxdp6p2" path="res://assets/NPC/free-pixel-citizens-for-top-down-tower-defense/4/U_Idle.png" id="2_womcr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5x3q7"]
@@ -46,8 +45,9 @@ radius = 52.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xishe"]
 size = Vector2(20, 34)
 
-[node name="npc 3" type="StaticBody2D"]
-script = ExtResource("1_f5fnm")
+[node name="npc 3" type="StaticBody2D" node_paths=PackedStringArray("_HUD")]
+script = ExtResource("1_2nb5l")
+_HUD = NodePath("HUD")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_xpqif")
@@ -63,23 +63,7 @@ position = Vector2(0, -5)
 shape = SubResource("RectangleShape2D_xishe")
 debug_color = Color(0.998937, 0, 0.128371, 0.42)
 
-[node name="Node2D" type="Node2D" parent="."]
-scale = Vector2(0.45, 0.45)
-
-[node name="Label" type="Label" parent="Node2D"]
-offset_left = -111.111
-offset_top = -204.444
-offset_right = 372.889
-offset_bottom = -45.4445
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_en13l")
-text = "Você me deixou, 
-e cada dia sem você é um peso.
-Eu não sei como viver sem o seu sorriso. 
-Onde está o amor que prometemos? 
-Onde você foi, meu querido?
-Por que não me leva também?"
-metadata/_edit_use_anchors_ = true
+[node name="HUD" type="CanvasLayer" parent="."]
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

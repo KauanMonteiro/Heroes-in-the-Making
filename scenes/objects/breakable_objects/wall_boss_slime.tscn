@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://c70u13lbtyqib"]
+
+[ext_resource type="Script" path="res://scripts/objects/wall_boss_slime.gd" id="1_8adbe"]
+[ext_resource type="Texture2D" uid="uid://cm7e0pgv6trop" path="res://assets/tilesets/tilesets1/Texture/TX Tileset Wall.png" id="1_580ki"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7uh8r"]
+size = Vector2(64, 8)
+
+[node name="WallBossSlime" type="StaticBody2D"]
+script = ExtResource("1_8adbe")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_580ki")
+region_enabled = true
+region_rect = Rect2(48, 32, 64, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -4)
+shape = SubResource("RectangleShape2D_7uh8r")

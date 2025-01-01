@@ -6,7 +6,6 @@ var attacking = false
 var rolling = false
 var is_die = false
 @export var _animation_tree: AnimationTree = null
-@export var life:= 3
 @export var move_seed := 120
 @export var push_speed := 10
 @export var acceleration := 0.4
@@ -14,15 +13,14 @@ var is_die = false
 @export var roll_cooldown := 3.0
 @export var roll_speed := 150
 var roll_time_left := 0.0
-@export var dano_max:= 1
-@export var dano_min := 0.5
+@onready var interact = false
+
 func _ready():
 	_state_machine = _animation_tree["parameters/playback"]
 
 func _physics_process(delta) -> void:
 	if roll_time_left > 0:
 		roll_time_left -= delta
-
 	if Input.is_action_just_pressed("attack") and !rolling:
 		attack()
 
@@ -80,11 +78,12 @@ func _on_animation_tree_animation_finished(_attack) -> void:
 
 func _on_attack_body_entered(body):
 	if body.is_in_group("enemies"):
-		body.life -= randf_range(dano_min,dano_max)
+		body.life -= randf_range(PlayerManager.dano_min,PlayerManager.dano_max)
 
 func die():
 	is_die = true
-	if life <=0:
+	if PlayerManager.life <= 0:
+		PlayerManager.life += 3 + PlayerManager.life_bonus
 		get_tree().reload_current_scene()
 
 func push():

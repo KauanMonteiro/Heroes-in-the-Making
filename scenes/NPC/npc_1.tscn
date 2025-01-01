@@ -1,8 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://cu542qyo3n7pt"]
+[gd_scene load_steps=10 format=3 uid="uid://cu542qyo3n7pt"]
 
 [ext_resource type="Texture2D" uid="uid://ddgfuc8togrrg" path="res://assets/NPC/Free Character Sprites - Fantasy Dreamland/32x32/Char_002_Idle.png" id="1_5wq7x"]
-[ext_resource type="Script" path="res://scripts/npc/npc.gd" id="1_i8m61"]
-[ext_resource type="FontFile" uid="uid://cxv5cjbfxvhip" path="res://assets/fonts/antiquity-print.ttf" id="2_drubs"]
+[ext_resource type="Script" path="res://scripts/npc/npc_1.gd" id="1_mhboa"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_swfqa"]
 atlas = ExtResource("1_5wq7x")
@@ -46,8 +45,9 @@ radius = 52.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xishe"]
 size = Vector2(20, 34)
 
-[node name="npc 1" type="StaticBody2D"]
-script = ExtResource("1_i8m61")
+[node name="npc 1" type="StaticBody2D" node_paths=PackedStringArray("_HUD")]
+script = ExtResource("1_mhboa")
+_HUD = NodePath("HUD")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_y1701")
@@ -62,21 +62,7 @@ position = Vector2(0, 7)
 shape = SubResource("RectangleShape2D_xishe")
 debug_color = Color(0.998937, 0, 0.128371, 0.42)
 
-[node name="Node2D" type="Node2D" parent="."]
-scale = Vector2(0.5, 0.5)
-
-[node name="Label" type="Label" parent="Node2D"]
-offset_left = -158.0
-offset_top = -138.0
-offset_right = 326.0
-offset_bottom = -33.0
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_drubs")
-text = "Você sempre foi mais corajoso que eu, 
-o primeiro a enfrentar a batalha. 
-Mas agora... você não está aqui.
-Eu deveria ter feito mais, deveria ter te protegido."
-metadata/_edit_use_anchors_ = true
+[node name="HUD" type="CanvasLayer" parent="."]
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://d1v57kk4ppivs"]
+
+[ext_resource type="PackedScene" uid="uid://chthyc2evagge" path="res://scenes/tilemap/tile_map.tscn" id="1_gwseb"]
+[ext_resource type="PackedScene" uid="uid://ui5mhnb848of" path="res://scenes/Player/player.tscn" id="2_xd13m"]
+
+[node name="level2" type="Node2D"]
+
+[node name="TileMap" parent="." instance=ExtResource("1_gwseb")]
+
+[node name="Player" parent="." instance=ExtResource("2_xd13m")]
+
+[node name="TileMap2" parent="." instance=ExtResource("1_gwseb")]

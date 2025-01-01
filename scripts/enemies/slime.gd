@@ -6,6 +6,7 @@ var player_ref = null
 var attacking = false
 var is_die = false
 @export var life := 2
+@export var damage := 1
 
 
 func _on_detection_body_entered(body):
@@ -59,4 +60,4 @@ func attack():
 
 func _on_attack_body_entered(body):
 	if body is Player:
-		body.life -= 1
+		PlayerManager.life -= damage

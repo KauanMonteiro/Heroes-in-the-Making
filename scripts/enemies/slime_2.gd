@@ -58,7 +58,7 @@ func attack():
 
 func _on_attack_body_entered(body):
 	if body is Player and attacking:
-		body.life -= 1  
+		PlayerManager.life -= 1
 
 
 func _on_animation_tree_animation_finished(_die):

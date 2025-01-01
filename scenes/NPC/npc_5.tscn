@@ -1,0 +1,70 @@
+[gd_scene load_steps=10 format=3 uid="uid://b04k2kktp30bk"]
+
+[ext_resource type="Script" path="res://scripts/npc/npc_5.gd" id="1_fd2br"]
+[ext_resource type="Texture2D" uid="uid://crckdgh425ruw" path="res://assets/NPC/Free Character Sprites - Fantasy Dreamland/32x32/Char_006_Idle.png" id="1_giyto"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ijgn5"]
+radius = 41.0488
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q4xux"]
+atlas = ExtResource("1_giyto")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kasw4"]
+atlas = ExtResource("1_giyto")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yxn1u"]
+atlas = ExtResource("1_giyto")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hltle"]
+atlas = ExtResource("1_giyto")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1tufe"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q4xux")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kasw4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yxn1u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hltle")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p1ppt"]
+size = Vector2(20, 33)
+
+[node name="npc5" type="StaticBody2D" node_paths=PackedStringArray("_HUD")]
+script = ExtResource("1_fd2br")
+_HUD = NodePath("HUD")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(0, 4)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_ijgn5")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_1tufe")
+frame_progress = 0.734085
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 7.5)
+shape = SubResource("RectangleShape2D_p1ppt")
+debug_color = Color(0.375443, 0.614336, 1.92523e-07, 0.42)
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

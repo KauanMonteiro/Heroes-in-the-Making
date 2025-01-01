@@ -1,0 +1,53 @@
+[gd_scene load_steps=9 format=3 uid="uid://b0a7t5upxslfx"]
+
+[ext_resource type="Script" path="res://scripts/npc/npc_7.gd" id="1_ae4tv"]
+[ext_resource type="Texture2D" uid="uid://dhyn26hffkaco" path="res://assets/NPC/Free Character Sprites - Fantasy Dreamland/32x32/Char_005_Idle.png" id="1_io0xn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ayaek"]
+size = Vector2(20, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_de6bh"]
+atlas = ExtResource("1_io0xn")
+region = Rect2(144, 144, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gffk0"]
+atlas = ExtResource("1_io0xn")
+region = Rect2(96, 144, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cqcf0"]
+atlas = ExtResource("1_io0xn")
+region = Rect2(48, 144, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r2jsd"]
+atlas = ExtResource("1_io0xn")
+region = Rect2(0, 144, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xxkws"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_de6bh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gffk0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cqcf0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r2jsd")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="npc7" type="StaticBody2D"]
+script = ExtResource("1_ae4tv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 7)
+shape = SubResource("RectangleShape2D_ayaek")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_xxkws")

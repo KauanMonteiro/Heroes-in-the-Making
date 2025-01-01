@@ -1,8 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://brmkp0jxmwoes"]
+[gd_scene load_steps=10 format=3 uid="uid://brmkp0jxmwoes"]
 
 [ext_resource type="Texture2D" uid="uid://dhb2dcrlno0ht" path="res://assets/NPC/Free Character Sprites - Fantasy Dreamland/32x32/Char_003_Idle.png" id="1_cup6f"]
 [ext_resource type="Script" path="res://scripts/npc/npc.gd" id="1_ee4o8"]
-[ext_resource type="FontFile" uid="uid://cxv5cjbfxvhip" path="res://assets/fonts/antiquity-print.ttf" id="2_rhc7k"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kr8g8"]
 atlas = ExtResource("1_cup6f")
@@ -46,8 +45,9 @@ radius = 52.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xishe"]
 size = Vector2(20, 34)
 
-[node name="npc 2" type="StaticBody2D"]
+[node name="npc 2" type="StaticBody2D" node_paths=PackedStringArray("_HUD")]
 script = ExtResource("1_ee4o8")
+_HUD = NodePath("HUD")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_mu4kt")
@@ -63,22 +63,7 @@ position = Vector2(0, 7)
 shape = SubResource("RectangleShape2D_xishe")
 debug_color = Color(0.998937, 0, 0.128371, 0.42)
 
-[node name="Node2D" type="Node2D" parent="."]
-scale = Vector2(0.5, 0.5)
-
-[node name="Label" type="Label" parent="Node2D"]
-offset_left = -52.0
-offset_top = -150.0
-offset_right = 142.0
-offset_bottom = -18.0
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_rhc7k")
-text = "O tempo passou, 
-mas a dor ainda fica.
- Às vezes, 
-me pego esperando 
-você voltar."
-metadata/_edit_use_anchors_ = true
+[node name="HUD" type="CanvasLayer" parent="."]
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
