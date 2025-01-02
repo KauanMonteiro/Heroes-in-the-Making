@@ -26,7 +26,7 @@ func _physics_process(delta):
 		var distance := global_position.distance_to(player_ref.global_position)
 		if distance < 50:
 			attack()
-		velocity = _direction * 60
+		velocity = _direction * 75
 		move(delta)
 		die()
 		animator()

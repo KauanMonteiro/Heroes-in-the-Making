@@ -1,12 +1,28 @@
-[gd_scene load_steps=4 format=3 uid="uid://cq8x05841xb5h"]
+[gd_scene load_steps=7 format=3 uid="uid://cq8x05841xb5h"]
 
 [ext_resource type="Script" path="res://scripts/UI/dialog_screen.gd" id="1_tnnmg"]
 [ext_resource type="FontFile" uid="uid://dv23khem8m3la" path="res://assets/fonts/hf-free-complete/compass-pro-v1.1/CompassPro.ttf" id="1_vak5y"]
+[ext_resource type="Texture2D" uid="uid://c08limi3kpb2r" path="res://assets/ui/Individual Icons/keyboard_15.png" id="3_erohm"]
+[ext_resource type="Texture2D" uid="uid://dwh27syqaocc5" path="res://assets/ui/Individual Icons/keyboard_116.png" id="4_flax0"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_31ych"]
 line_spacing = 0.0
 font = ExtResource("1_vak5y")
 shadow_color = Color(0, 0, 0, 0.6)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hrmrj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_erohm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_flax0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="dialogScreen" type="Control" node_paths=PackedStringArray("_name", "_dialog", "_faceset")]
 layout_mode = 3
@@ -84,3 +100,9 @@ theme_override_fonts/normal_font = ExtResource("1_vak5y")
 theme_override_font_sizes/normal_font_size = 16
 text = "
 "
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(321.333, 71.6667)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_hrmrj")
+frame_progress = 0.741809

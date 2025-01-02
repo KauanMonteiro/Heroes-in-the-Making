@@ -1,7 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://bcreg03ucvo0y"]
+[gd_scene load_steps=14 format=3 uid="uid://bcreg03ucvo0y"]
 
 [ext_resource type="Texture2D" uid="uid://ds6tsasbyojkc" path="res://assets/NPC/free-pixel-citizens-for-top-down-tower-defense/1/S_Idle.png" id="1_lvkl1"]
 [ext_resource type="Script" path="res://scripts/npc/npc_8.gd" id="1_mfd26"]
+[ext_resource type="FontFile" uid="uid://cxfl371v85e08" path="res://assets/fonts/hf-free-complete/equipment-pro-v1.1/EquipmentPro.ttf" id="3_dqfo0"]
+[ext_resource type="Texture2D" uid="uid://c08limi3kpb2r" path="res://assets/ui/Individual Icons/keyboard_15.png" id="4_dlcqn"]
+[ext_resource type="Texture2D" uid="uid://dwh27syqaocc5" path="res://assets/ui/Individual Icons/keyboard_116.png" id="5_e0l3d"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_80ca2"]
 atlas = ExtResource("1_lvkl1")
@@ -45,6 +48,20 @@ size = Vector2(18, 40)
 [sub_resource type="CircleShape2D" id="CircleShape2D_i1tqe"]
 radius = 44.0114
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_t8o5o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_dlcqn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_e0l3d")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="npc8" type="StaticBody2D" node_paths=PackedStringArray("_HUD")]
 script = ExtResource("1_mfd26")
 _HUD = NodePath("CanvasLayer")
@@ -66,6 +83,24 @@ position = Vector2(1, -6)
 shape = SubResource("CircleShape2D_i1tqe")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(0, -19)
+scale = Vector2(0.5, 0.5)
+
+[node name="Label" type="Label" parent="Node2D"]
+offset_left = -28.0
+offset_top = -36.0
+offset_right = 39.0
+offset_bottom = -13.0
+theme_override_fonts/font = ExtResource("3_dqfo0")
+text = "interagir"
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Node2D"]
+position = Vector2(38, -28)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_t8o5o")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

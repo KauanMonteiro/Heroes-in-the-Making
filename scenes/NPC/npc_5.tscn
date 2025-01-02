@@ -1,7 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://b04k2kktp30bk"]
+[gd_scene load_steps=14 format=3 uid="uid://b04k2kktp30bk"]
 
 [ext_resource type="Script" path="res://scripts/npc/npc_5.gd" id="1_fd2br"]
 [ext_resource type="Texture2D" uid="uid://crckdgh425ruw" path="res://assets/NPC/Free Character Sprites - Fantasy Dreamland/32x32/Char_006_Idle.png" id="1_giyto"]
+[ext_resource type="FontFile" uid="uid://cxfl371v85e08" path="res://assets/fonts/hf-free-complete/equipment-pro-v1.1/EquipmentPro.ttf" id="3_njt1u"]
+[ext_resource type="Texture2D" uid="uid://c08limi3kpb2r" path="res://assets/ui/Individual Icons/keyboard_15.png" id="4_u6xjc"]
+[ext_resource type="Texture2D" uid="uid://dwh27syqaocc5" path="res://assets/ui/Individual Icons/keyboard_116.png" id="5_wrp5m"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ijgn5"]
 radius = 41.0488
@@ -45,6 +48,20 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p1ppt"]
 size = Vector2(20, 33)
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_tw082"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_u6xjc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_wrp5m")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="npc5" type="StaticBody2D" node_paths=PackedStringArray("_HUD")]
 script = ExtResource("1_fd2br")
 _HUD = NodePath("HUD")
@@ -65,6 +82,23 @@ shape = SubResource("RectangleShape2D_p1ppt")
 debug_color = Color(0.375443, 0.614336, 1.92523e-07, 0.42)
 
 [node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="Node2D" type="Node2D" parent="."]
+scale = Vector2(0.5, 0.5)
+
+[node name="Label" type="Label" parent="Node2D"]
+offset_left = -28.0
+offset_top = -36.0
+offset_right = 39.0
+offset_bottom = -13.0
+theme_override_fonts/font = ExtResource("3_njt1u")
+text = "interagir"
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Node2D"]
+position = Vector2(38, -28)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_tw082")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

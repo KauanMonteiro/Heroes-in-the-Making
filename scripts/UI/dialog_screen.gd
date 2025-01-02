@@ -10,6 +10,7 @@ var data:={}
 @export var _faceset :TextureRect = null
 
 func _ready()->void:
+	$AnimatedSprite2D.play("default")
 	_initialize_dialog()
 	
 func _process(delta):

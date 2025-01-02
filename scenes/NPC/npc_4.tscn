@@ -1,7 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://c10v1rawmw5n5"]
+[gd_scene load_steps=14 format=3 uid="uid://c10v1rawmw5n5"]
 
 [ext_resource type="Script" path="res://scripts/npc/npc_4.gd" id="1_g3b3q"]
 [ext_resource type="Texture2D" uid="uid://blmdfmjda2ld5" path="res://assets/NPC/Main Character/Character_Idle.png" id="2_xj3oc"]
+[ext_resource type="FontFile" uid="uid://cxfl371v85e08" path="res://assets/fonts/hf-free-complete/equipment-pro-v1.1/EquipmentPro.ttf" id="3_pwqcw"]
+[ext_resource type="Texture2D" uid="uid://c08limi3kpb2r" path="res://assets/ui/Individual Icons/keyboard_15.png" id="4_bnsa0"]
+[ext_resource type="Texture2D" uid="uid://dwh27syqaocc5" path="res://assets/ui/Individual Icons/keyboard_116.png" id="5_gfuo4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t1oea"]
 atlas = ExtResource("2_xj3oc")
@@ -45,6 +48,20 @@ radius = 52.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xishe"]
 size = Vector2(20, 38)
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_4eb1f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_bnsa0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_gfuo4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="npc 4" type="StaticBody2D" node_paths=PackedStringArray("_HUD")]
 script = ExtResource("1_g3b3q")
 _HUD = NodePath("HUD")
@@ -64,6 +81,24 @@ shape = SubResource("RectangleShape2D_xishe")
 debug_color = Color(0.998937, 0, 0.128371, 0.42)
 
 [node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(-2, -6)
+scale = Vector2(0.5, 0.5)
+
+[node name="Label" type="Label" parent="Node2D"]
+offset_left = -28.0
+offset_top = -36.0
+offset_right = 39.0
+offset_bottom = -13.0
+theme_override_fonts/font = ExtResource("3_pwqcw")
+text = "interagir"
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Node2D"]
+position = Vector2(38, -28)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_4eb1f")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

@@ -1,7 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://cu542qyo3n7pt"]
+[gd_scene load_steps=14 format=3 uid="uid://cu542qyo3n7pt"]
 
 [ext_resource type="Texture2D" uid="uid://ddgfuc8togrrg" path="res://assets/NPC/Free Character Sprites - Fantasy Dreamland/32x32/Char_002_Idle.png" id="1_5wq7x"]
 [ext_resource type="Script" path="res://scripts/npc/npc_1.gd" id="1_mhboa"]
+[ext_resource type="FontFile" uid="uid://cxfl371v85e08" path="res://assets/fonts/hf-free-complete/equipment-pro-v1.1/EquipmentPro.ttf" id="3_4ubsr"]
+[ext_resource type="Texture2D" uid="uid://c08limi3kpb2r" path="res://assets/ui/Individual Icons/keyboard_15.png" id="4_2djye"]
+[ext_resource type="Texture2D" uid="uid://dwh27syqaocc5" path="res://assets/ui/Individual Icons/keyboard_116.png" id="5_7de6t"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_swfqa"]
 atlas = ExtResource("1_5wq7x")
@@ -45,6 +48,20 @@ radius = 52.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xishe"]
 size = Vector2(20, 34)
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_rrdjk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_2djye")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_7de6t")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="npc 1" type="StaticBody2D" node_paths=PackedStringArray("_HUD")]
 script = ExtResource("1_mhboa")
 _HUD = NodePath("HUD")
@@ -63,6 +80,23 @@ shape = SubResource("RectangleShape2D_xishe")
 debug_color = Color(0.998937, 0, 0.128371, 0.42)
 
 [node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="Node2D" type="Node2D" parent="."]
+scale = Vector2(0.5, 0.5)
+
+[node name="Label" type="Label" parent="Node2D"]
+offset_left = -28.0
+offset_top = -36.0
+offset_right = 39.0
+offset_bottom = -13.0
+theme_override_fonts/font = ExtResource("3_4ubsr")
+text = "interagir"
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Node2D"]
+position = Vector2(38, -28)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_rrdjk")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
