@@ -1,0 +1,103 @@
+[gd_scene load_steps=14 format=3 uid="uid://cqk2aq0xjki5j"]
+
+[ext_resource type="Script" path="res://scripts/npc/npc_9.gd" id="1_5bjsv"]
+[ext_resource type="Texture2D" uid="uid://cqpa67gl22ru" path="res://assets/NPC/free-pixel-citizens-for-top-down-tower-defense/3/S_Idle.png" id="1_wclq4"]
+[ext_resource type="FontFile" uid="uid://cxfl371v85e08" path="res://assets/fonts/hf-free-complete/equipment-pro-v1.1/EquipmentPro.ttf" id="2_2qtmg"]
+[ext_resource type="Texture2D" uid="uid://c08limi3kpb2r" path="res://assets/ui/Individual Icons/keyboard_15.png" id="3_87qht"]
+[ext_resource type="Texture2D" uid="uid://dwh27syqaocc5" path="res://assets/ui/Individual Icons/keyboard_116.png" id="4_pafqx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lhcji"]
+atlas = ExtResource("1_wclq4")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gl8g0"]
+atlas = ExtResource("1_wclq4")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mr0gk"]
+atlas = ExtResource("1_wclq4")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_17w0g"]
+atlas = ExtResource("1_wclq4")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wq52v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lhcji")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gl8g0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mr0gk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_17w0g")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.5
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hqwpb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_87qht")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_pafqx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rpf6f"]
+size = Vector2(14, 26)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_oq46p"]
+radius = 60.0333
+
+[node name="npc 9" type="StaticBody2D" node_paths=PackedStringArray("_HUD")]
+script = ExtResource("1_5bjsv")
+_HUD = NodePath("HUD")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_wq52v")
+frame_progress = 0.96106
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(0, -11)
+scale = Vector2(0.5, 0.5)
+
+[node name="Label" type="Label" parent="Node2D"]
+offset_left = -28.0
+offset_top = -36.0
+offset_right = 39.0
+offset_bottom = -13.0
+theme_override_fonts/font = ExtResource("2_2qtmg")
+text = "interagir"
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Node2D"]
+position = Vector2(38, -28)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_hqwpb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -6)
+shape = SubResource("RectangleShape2D_rpf6f")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_oq46p")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

@@ -1,0 +1,104 @@
+[gd_scene load_steps=14 format=3 uid="uid://dy8dgbh7ubwcv"]
+
+[ext_resource type="Texture2D" uid="uid://7ihd6f4g5431" path="res://assets/NPC/free-villagers-sprite-sheets-pixel-art/1 Old_man/Old_man_idle.png" id="1_746nn"]
+[ext_resource type="Script" path="res://scripts/npc/npc_11.gd" id="1_ju564"]
+[ext_resource type="FontFile" uid="uid://cxfl371v85e08" path="res://assets/fonts/hf-free-complete/equipment-pro-v1.1/EquipmentPro.ttf" id="2_u0nhs"]
+[ext_resource type="Texture2D" uid="uid://c08limi3kpb2r" path="res://assets/ui/Individual Icons/keyboard_15.png" id="3_qjh6s"]
+[ext_resource type="Texture2D" uid="uid://dwh27syqaocc5" path="res://assets/ui/Individual Icons/keyboard_116.png" id="4_4opfu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xb110"]
+atlas = ExtResource("1_746nn")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2hci3"]
+atlas = ExtResource("1_746nn")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_shrmj"]
+atlas = ExtResource("1_746nn")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_olx8j"]
+atlas = ExtResource("1_746nn")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jp32g"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xb110")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2hci3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_shrmj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_olx8j")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rexu0"]
+size = Vector2(9, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_s86gf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_qjh6s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_4opfu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6t00h"]
+radius = 60.0333
+
+[node name="npc_11" type="StaticBody2D" node_paths=PackedStringArray("_HUD")]
+script = ExtResource("1_ju564")
+_HUD = NodePath("HUD")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_jp32g")
+frame_progress = 0.194014
+offset = Vector2(11, -6)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 2)
+shape = SubResource("RectangleShape2D_rexu0")
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(0, -11)
+scale = Vector2(0.5, 0.5)
+
+[node name="Label" type="Label" parent="Node2D"]
+offset_left = -28.0
+offset_top = -36.0
+offset_right = 39.0
+offset_bottom = -13.0
+theme_override_fonts/font = ExtResource("2_u0nhs")
+text = "interagir"
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Node2D"]
+position = Vector2(38, -28)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_s86gf")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_6t00h")
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
