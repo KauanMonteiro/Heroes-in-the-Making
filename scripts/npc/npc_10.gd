@@ -26,14 +26,14 @@ var _dialog_data2: Dictionary = {
 
 
 var action = false
-var mission_completed = false  
 
 func _process(delta):
 	if action and Input.is_action_just_pressed("interact"):
 		$Node2D.visible = false
+		MissionManager.mission1accpet = true
 		var _new_dialog: DialogScreen = _DIALOG_SCREEN.instantiate()
 		
-		if mission_completed:
+		if MissionManager.mission1complet:
 			_new_dialog.data = _dialog_data2  
 		else:
 			_new_dialog.data = _dialog_data1  
@@ -58,5 +58,3 @@ func _on_area_2d_body_exited(body):
 		for child in _HUD.get_children():
 			child.queue_free()
 			
-func complete_mission():
-	mission_completed = true

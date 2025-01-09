@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://ccsr6orjtaaqx"]
+
+[ext_resource type="Script" path="res://scripts/UI/missiontitler.gd" id="1_ffvyd"]
+[ext_resource type="FontFile" uid="uid://14un6vn6lrtk" path="res://assets/fonts/hf-free-complete/equipment-pro-v1.1/EquipmentPro.otf" id="2_ycfer"]
+
+[node name="missiontitler" type="Control" node_paths=PackedStringArray("_titler")]
+layout_mode = 3
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 0
+script = ExtResource("1_ffvyd")
+_titler = NodePath("Label")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("2_ycfer")
+theme_override_font_sizes/font_size = 30

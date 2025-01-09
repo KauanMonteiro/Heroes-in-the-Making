@@ -18,6 +18,7 @@ config/icon="res://mTr93T.png"
 
 GameManager="*res://scripts/manager/game_manager.gd"
 PlayerManager="*res://scripts/manager/player_manager.gd"
+MissionManager="*res://scripts/manager/mission_manager.gd"
 
 [display]
 

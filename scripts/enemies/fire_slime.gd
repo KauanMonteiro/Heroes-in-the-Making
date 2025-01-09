@@ -51,6 +51,7 @@ func die():
 		is_die = true
 		set_physics_process(false) 
 		_state_machine.travel("die")
+		PlayerManager.coins += randi_range(0,10)
 
 func attack():
 	if !attacking:

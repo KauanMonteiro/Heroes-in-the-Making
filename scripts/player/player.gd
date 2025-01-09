@@ -4,7 +4,6 @@ class_name Player
 var _state_machine
 var attacking = false
 var rolling = false
-var is_die = false
 @export var _animation_tree: AnimationTree = null
 @export var move_seed := 120
 @export var push_speed := 10
@@ -75,14 +74,13 @@ func _on_animation_tree_animation_finished(_attack) -> void:
 	attacking = false
 	rolling = false
 
-
 func _on_attack_body_entered(body):
 	if body.is_in_group("enemies"):
 		body.life -= randf_range(PlayerManager.dano_min,PlayerManager.dano_max)
 
 func die():
-	is_die = true
 	if PlayerManager.life <= 0:
+		PlayerManager.is_die = true
 		PlayerManager.life += 3 + PlayerManager.life_bonus
 		get_tree().reload_current_scene()
 

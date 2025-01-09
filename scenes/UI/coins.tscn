@@ -1,0 +1,92 @@
+[gd_scene load_steps=11 format=3 uid="uid://dlcyocwbnq5yy"]
+
+[ext_resource type="Script" path="res://scripts/UI/coins.gd" id="1_0j35r"]
+[ext_resource type="Texture2D" uid="uid://cuov0q2qt5wuk" path="res://assets/ui/coins-chests-etc-2-0.png" id="3_dli0r"]
+[ext_resource type="FontFile" uid="uid://14un6vn6lrtk" path="res://assets/fonts/hf-free-complete/equipment-pro-v1.1/EquipmentPro.otf" id="7_xx8oh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f1k8f"]
+atlas = ExtResource("3_dli0r")
+region = Rect2(64, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gf2eu"]
+atlas = ExtResource("3_dli0r")
+region = Rect2(80, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xgwo8"]
+atlas = ExtResource("3_dli0r")
+region = Rect2(96, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2q6gv"]
+atlas = ExtResource("3_dli0r")
+region = Rect2(112, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wwc45"]
+atlas = ExtResource("3_dli0r")
+region = Rect2(128, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_waj5c"]
+atlas = ExtResource("3_dli0r")
+region = Rect2(144, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yxehp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f1k8f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gf2eu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xgwo8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2q6gv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wwc45")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_waj5c")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="coins" type="CanvasLayer"]
+scale = Vector2(1.5, 1.5)
+transform = Transform2D(1.5, 0, 0, 1.5, 0, 0)
+script = ExtResource("1_0j35r")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 96.0
+offset_top = -250.0
+offset_right = 96.0
+offset_bottom = -250.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 1
+offset_left = -24.0
+offset_top = -66.6667
+offset_right = 64.0
+offset_bottom = -15.6667
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("7_xx8oh")
+theme_override_font_sizes/font_size = 50
+text = "0000"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Control"]
+position = Vector2(-66.6667, -45.3333)
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_yxehp")
+frame_progress = 0.505886

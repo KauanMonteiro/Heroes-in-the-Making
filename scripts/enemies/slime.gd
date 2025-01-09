@@ -49,6 +49,7 @@ func die():
 		set_physics_process(false)
 		animation.play("die")
 		await  animation.animation_finished
+		PlayerManager.coins += randi_range(0,1)
 		queue_free()
 
 func attack():

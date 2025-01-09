@@ -46,6 +46,7 @@ func animator():
 func die():
 	if life <= 0:
 		is_die = true
+		MissionManager.goblincount += 1
 		set_physics_process(false)
 		animation.play("die")
 		await  animation.animation_finished
