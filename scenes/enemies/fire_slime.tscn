@@ -117,7 +117,7 @@ advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_kybb8"]
 states/attack/node = SubResource("AnimationNodeBlendSpace2D_iaf7p")
-states/attack/position = Vector2(311, 175)
+states/attack/position = Vector2(324, 175)
 states/die/node = SubResource("AnimationNodeBlendSpace2D_i1r1n")
 states/die/position = Vector2(725, 100)
 states/idle/node = SubResource("AnimationNodeBlendSpace2D_w2aks")

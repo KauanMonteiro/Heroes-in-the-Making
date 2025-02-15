@@ -4,7 +4,7 @@ extends Node
 var mission1accpet = false
 var goblincount := 9
 var mission1complet = false
-
+var mission1rewardGiven = false
 
 func _process(delta):
 	if PlayerManager.is_die:
@@ -17,5 +17,6 @@ func mission1():
 		mission1complet = true
 
 func ResetMission():
+	if !mission1complet:
 		goblincount = 0
 		PlayerManager.is_die = false

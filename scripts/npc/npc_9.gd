@@ -30,10 +30,11 @@ var _dialog_data2: Dictionary = {
 }
 
 var action = false
-var mission_titler_instance: MissionTitlerScreen = null  # Para armazenar a instância atual do título
+var mission_titler_instance: MissionTitlerScreen = null  
 var missioncomplet = false
+
 func update_mission_title():
-	if !missioncomplet:
+	if !missioncomplet and !PlayerManager.is_die:
 		if mission_titler_instance:
 			mission_titler_instance.queue_free()
 
@@ -46,12 +47,10 @@ func update_mission_title():
 		else:
 			_titler_mission = {
 				0: {
-					"titler": "Missão concluída. 
-					Fale com a Lucia para pegar sua recompensa."
+					"titler": "Missão concluída. Fale com a Lucia para pegar sua recompensa."
 				}
 			}
 
-		# Cria uma nova instância do título da missão
 		mission_titler_instance = MISSIONTITLER.instantiate()
 		mission_titler_instance.data_titler = _titler_mission
 		_HUDTitler.add_child(mission_titler_instance)
@@ -71,7 +70,9 @@ func _process(delta):
 
 		if MissionManager.mission1complet:
 			_new_dialog.data = _dialog_data2
-			PlayerManager.coins += 1000
+			if not MissionManager.mission1rewardGiven:  
+				PlayerManager.coins += 30
+				MissionManager.mission1rewardGiven = true  
 			missioncomplet = true
 		else:
 			_new_dialog.data = _dialog_data1  
@@ -79,12 +80,10 @@ func _process(delta):
 		_HUD.add_child(_new_dialog)
 		action = false  
 
-# Inicialização
 func _ready():
 	$Node2D.visible = false
 	$AnimatedSprite2D.play("default")
 
-# Detecção de colisão com o player
 func _on_area_2d_body_entered(body):
 	if body is Player:
 		$Node2D.visible = true

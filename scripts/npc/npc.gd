@@ -18,7 +18,7 @@ func _process(delta):
 		var _new_dialog: DialogScreen = _DIALOG_SCREEN.instantiate()
 		_new_dialog.data = _dialog_data
 		_HUD.add_child(_new_dialog)
-		action = false  # Impede que o diálogo seja instanciado múltiplas vezes
+		action = false  
 
 func _ready():
 	$Node2D.visible = false

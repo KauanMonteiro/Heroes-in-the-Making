@@ -406,6 +406,7 @@ states/idler/position = Vector2(381, 140)
 states/run/node = SubResource("AnimationNodeAnimation_ydk36")
 states/run/position = Vector2(418, 58)
 transitions = ["Start", "idler", SubResource("AnimationNodeStateMachineTransition_4x0iv"), "idler", "run", SubResource("AnimationNodeStateMachineTransition_m5ofh"), "run", "idler", SubResource("AnimationNodeStateMachineTransition_7pekr")]
+graph_offset = Vector2(-47, -5)
 
 [node name="goblin" type="CharacterBody2D" groups=["enemies"]]
 script = ExtResource("1_se58r")

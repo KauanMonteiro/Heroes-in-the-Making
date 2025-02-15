@@ -7,47 +7,30 @@ const _DIALOG_SCREEN = preload("res://scenes/UI/dialog_screen.tscn")
 var _dialog_data1: Dictionary = {
 	0: {
 		"faceset": "res://assets/ui/2 Portraits with back/Icons_13.png", 
-		"dialog": "Você não é daqui. A vila era cheia de vida, mas agora... restam poucos de nós, escondidos e com medo.",
+		"dialog": "Você não é daqui. Não venha me importunar com os seus problemas.",
 		"title": "Günter"
 	},
 	1: {
 		"faceset": "res://assets/ui/2 Portraits with back/Icons_13.png", 
-		"dialog": "Eu lutei, garota. Lutamos todos. Mas no final, o que sobrou? Poucos de nós, com medo, tentando sobreviver.",
+		"dialog": "Eu lutei muito em minha juventude. Agora só quero ficar em paz",
 		"title": "Günter"
 	},
+
 	2: {
-		"faceset": "res://assets/ui/2 Portraits with back/Icons_13.png", 
-		"dialog": "Eu era forte, menina. Agora... sou só um velho, com saudade e medo do que virá.",
-		"title": "Günter"
-	},
-	3: {
 		"faceset": "res://assets/ui/2 Portraits with back/Icons_13.png",  
-		"dialog": "Você não entende. A luta que você quer... não é pra alguém como você. Não há mais forças.",
+		"dialog": "Você acha que pode enfrentar os goblins? Isso não é pra alguém como você.",
 		"title": "Günter"
 	},
-	4: {
+}
+
+var _dialog_data2: Dictionary = {
+	0: {
 		"faceset": "res://assets/ui/2 Portraits with back/Icons_13.png", 
-		"dialog": "Você acha que pode enfrentar os goblins? Eu fui um dos melhores, e até eu já não tenho forças.",
+		"dialog": "Hm... Então, derrotou os goblins, é? Parece que os monstros não representam mais uma ameaça",
 		"title": "Günter"
 	}
 }
 
-
-
-# Diálogos para a segunda interação (missão completa)
-var _dialog_data2: Dictionary = {
-	0: {
-		"faceset": "res://assets/ui/2 Portraits with back/Icons_13.png", 
-		"dialog": "Hmph... Você fez o que prometeu, né? Os monstros não são mais um problema,",
-		"title": "Günter"
-	},
-	1:{
-		"faceset": "res://assets/ui/2 Portraits with back/Icons_13.png",  
-		"dialog":" mas não se engane. Isso não vai durar. A vila tem um pouco de paz agora,",
-		"title": "Günter"
-		
-	},
-}
 
 
 var action = false
@@ -55,7 +38,6 @@ var action = false
 func _process(delta):
 	if action and Input.is_action_just_pressed("interact"):
 		$Node2D.visible = false
-		MissionManager.mission1accpet = true
 		var _new_dialog: DialogScreen = _DIALOG_SCREEN.instantiate()
 		
 		if MissionManager.mission1complet:
