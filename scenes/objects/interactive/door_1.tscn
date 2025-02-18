@@ -1,13 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://bd8cw62p5cksa"]
+[gd_scene load_steps=5 format=3 uid="uid://bd8cw62p5cksa"]
 
+[ext_resource type="Script" path="res://scripts/objects/door_1.gd" id="1_fxy4s"]
 [ext_resource type="Texture2D" uid="uid://cqwliicocqcp2" path="res://assets/tilesets/tilesets1/Texture/TX Props.png" id="1_voe3g"]
-[ext_resource type="Script" path="res://scripts/objects/door_1.gd" id="2_k55ux"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_grgqv"]
-size = Vector2(36, 50)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bj1cv"]
+size = Vector2(38, 61)
 
-[node name="door1" type="Area2D"]
-script = ExtResource("2_k55ux")
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l210y"]
+size = Vector2(36, 52)
+
+[node name="dugeon_1" type="Area2D"]
+script = ExtResource("1_fxy4s")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(8, 10)
@@ -16,7 +19,14 @@ region_enabled = true
 region_rect = Rect2(16, 96, 64, 64)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(7, 10)
-shape = SubResource("RectangleShape2D_grgqv")
+position = Vector2(8, 15.5)
+shape = SubResource("RectangleShape2D_bj1cv")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(8, 11)
+shape = SubResource("RectangleShape2D_l210y")
+debug_color = Color(0.903494, 0.0001442, 0.752914, 0.42)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

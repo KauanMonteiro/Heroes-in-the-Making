@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://ofamjmowyo2i"]
+[gd_scene load_steps=41 format=3 uid="uid://ofamjmowyo2i"]
 
 [ext_resource type="Texture2D" uid="uid://bw2rom0ig804n" path="res://assets/enemies/E_Bros_Assets_TopDownEnemy/Enemy-Melee-Idle-S.png" id="1_2ubtl"]
 [ext_resource type="Script" path="res://scripts/enemies/demon_1.gd" id="1_njjm6"]
@@ -942,6 +942,10 @@ advance_mode = 2
 switch_mode = 2
 advance_mode = 2
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_t1hqw"]
+switch_mode = 1
+advance_mode = 2
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_dvxb1"]
 states/Start/position = Vector2(160, 105)
 states/attack/node = SubResource("AnimationNodeBlendSpace2D_6sr0p")
@@ -950,7 +954,7 @@ states/die/node = SubResource("AnimationNodeAnimation_tulft")
 states/die/position = Vector2(795, 100)
 states/idler/node = SubResource("AnimationNodeBlendSpace2D_lktb3")
 states/idler/position = Vector2(333, 100)
-transitions = ["die", "End", SubResource("AnimationNodeStateMachineTransition_mtn6s"), "Start", "idler", SubResource("AnimationNodeStateMachineTransition_4qm5r"), "attack", "idler", SubResource("AnimationNodeStateMachineTransition_y65c3")]
+transitions = ["die", "End", SubResource("AnimationNodeStateMachineTransition_mtn6s"), "Start", "idler", SubResource("AnimationNodeStateMachineTransition_4qm5r"), "attack", "idler", SubResource("AnimationNodeStateMachineTransition_y65c3"), "idler", "attack", SubResource("AnimationNodeStateMachineTransition_t1hqw")]
 
 [node name="demon1" type="CharacterBody2D" node_paths=PackedStringArray("_animation_tree") groups=["enemies"]]
 scale = Vector2(0.5, 0.5)

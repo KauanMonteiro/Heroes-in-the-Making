@@ -1,7 +1,9 @@
 extends Node
 
-@export var puzzle1 = false
-@export var puzzle2 = false
-@export var puzzle3 = false
+var puzzle1 = false
+var puzzle2 = false
+var puzzle3 = false
 
-@export var die_fire_slime = false
+var die_fire_slime = false
+
+var from_scene

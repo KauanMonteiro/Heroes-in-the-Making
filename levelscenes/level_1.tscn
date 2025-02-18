@@ -171,7 +171,7 @@ position = Vector2(1209, -2148)
 scale = Vector2(1.5, 1.5)
 
 [node name="Player" parent="." instance=ExtResource("1_1hu1r")]
-position = Vector2(1047, -220)
+position = Vector2(99, 11)
 scale = Vector2(1.4, 1.4)
 
 [node name="FireSlime" parent="." instance=ExtResource("24_44n6o")]

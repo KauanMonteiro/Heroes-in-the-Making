@@ -48,6 +48,7 @@ func die():
 		set_physics_process(false)
 		PlayerManager.coins += randi_range(0,15)
 		_state_machine.travel("die")
+		
 
 func attack():
 	if !attacking && !is_die:
@@ -62,4 +63,5 @@ func _on_animation_tree_animation_finished(anim_name):
 	if anim_name == "attack":
 		attacking = false
 	elif anim_name == "die":
+		MissionManager.complet_dugeon = true
 		queue_free()

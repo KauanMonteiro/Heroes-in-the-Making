@@ -6,6 +6,9 @@ var goblincount := 9
 var mission1complet = false
 var mission1rewardGiven = false
 
+#dugeon1
+var complet_dugeon = false
+
 func _process(delta):
 	if PlayerManager.is_die:
 		ResetMission()
