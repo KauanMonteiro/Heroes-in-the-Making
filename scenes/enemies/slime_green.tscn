@@ -1430,6 +1430,7 @@ disabled = true
 debug_color = Color(0.957386, 0, 0.532851, 0.42)
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
+active = false
 tree_root = SubResource("AnimationNodeStateMachine_22xok")
 anim_player = NodePath("../AnimationPlayer")
 parameters/attack/blend_position = Vector2(0, 0)

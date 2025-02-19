@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://3isgvvrhxyiy"]
+[gd_scene load_steps=23 format=3 uid="uid://3isgvvrhxyiy"]
 
 [ext_resource type="Script" path="res://scripts/enemies/goblinMission.gd" id="1_1nyum"]
 [ext_resource type="Texture2D" uid="uid://by7luu165y6hf" path="res://assets/enemies/Pixelarium - Enemy Pack1 - Free Version/Golbin/spr_goblin_idle.png" id="2_a53b6"]
@@ -381,6 +381,9 @@ _data = {
 "run": SubResource("Animation_ge6pb")
 }
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_b8fb1"]
+animation = &"die"
+
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_fh1b4"]
 animation = &"idler"
 
@@ -401,12 +404,18 @@ switch_mode = 1
 advance_mode = 2
 advance_condition = &"velocity.length() < 1"
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_bms8t"]
+switch_mode = 2
+advance_mode = 2
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_eym8q"]
+states/die/node = SubResource("AnimationNodeAnimation_b8fb1")
+states/die/position = Vector2(540, 94)
 states/idler/node = SubResource("AnimationNodeAnimation_fh1b4")
 states/idler/position = Vector2(381, 140)
 states/run/node = SubResource("AnimationNodeAnimation_ydk36")
 states/run/position = Vector2(418, 58)
-transitions = ["Start", "idler", SubResource("AnimationNodeStateMachineTransition_4x0iv"), "idler", "run", SubResource("AnimationNodeStateMachineTransition_m5ofh"), "run", "idler", SubResource("AnimationNodeStateMachineTransition_7pekr")]
+transitions = ["Start", "idler", SubResource("AnimationNodeStateMachineTransition_4x0iv"), "idler", "run", SubResource("AnimationNodeStateMachineTransition_m5ofh"), "run", "idler", SubResource("AnimationNodeStateMachineTransition_7pekr"), "die", "End", SubResource("AnimationNodeStateMachineTransition_bms8t")]
 
 [node name="goblinMission" type="CharacterBody2D" groups=["enemies"]]
 script = ExtResource("1_1nyum")

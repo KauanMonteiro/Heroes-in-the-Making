@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cnlfe08sga8th"
+path="res://.godot/imported/751342_qubodup_slime-jump-2 (online-audio-converter.com).mp3-560487552cc1eff45cce6f4f6499dc04.mp3str"
+
+[deps]
+
+source_file="res://assets/sound/enemies/slimes/751342_qubodup_slime-jump-2 (online-audio-converter.com).mp3"
+dest_files=["res://.godot/imported/751342_qubodup_slime-jump-2 (online-audio-converter.com).mp3-560487552cc1eff45cce6f4f6499dc04.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

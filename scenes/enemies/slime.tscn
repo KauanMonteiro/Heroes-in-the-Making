@@ -1,9 +1,11 @@
-[gd_scene load_steps=15 format=3 uid="uid://cqfp3ckrrny5s"]
+[gd_scene load_steps=17 format=3 uid="uid://cqfp3ckrrny5s"]
 
 [ext_resource type="Script" path="res://scripts/enemies/slime.gd" id="1_b8lh7"]
 [ext_resource type="Texture2D" uid="uid://ba5eh63tpfgse" path="res://assets/enemies/Pixelarium - Enemy Pack1 - Free Version/Slime/Blue Slime/spr_Blue_slime_idle.png" id="1_ibyg3"]
 [ext_resource type="Texture2D" uid="uid://2q28ycthykv7" path="res://assets/enemies/Pixelarium - Enemy Pack1 - Free Version/Slime/Blue Slime/spr_Blue_slime_walk.png" id="2_cen3f"]
+[ext_resource type="AudioStream" uid="uid://3jvhlfj0pssj" path="res://assets/sound/enemies/slimes/167074__drminky__slime-death-1.wav" id="3_yn47q"]
 [ext_resource type="Texture2D" uid="uid://cj212bgs6lypc" path="res://assets/enemies/Pixelarium - Enemy Pack1 - Free Version/Slime/Blue Slime/spr_Blue_slime_attack.png" id="3_yt8i8"]
+[ext_resource type="AudioStream" uid="uid://blqqljvwb1766" path="res://assets/sound/enemies/slimes/751341_qubodup_slime-jump-1.wav" id="5_a6wxf"]
 [ext_resource type="Texture2D" uid="uid://cik1rafb1q65w" path="res://assets/enemies/Pixelarium - Enemy Pack1 - Free Version/Slime/Blue Slime/spr_Blue_slime_death.png" id="5_tubqr"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vpmhg"]
@@ -98,6 +100,30 @@ tracks/6/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("AudioStreamPlayer2D:stream")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_yn47q")]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("AudioStreamPlayer2D:playing")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_1k1hq"]
 resource_name = "attack"
@@ -174,6 +200,30 @@ tracks/5/keys = {
 "update": 1,
 "values": [true, false]
 }
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("AudioStreamPlayer2D:stream")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("5_a6wxf")]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("AudioStreamPlayer2D:playing")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(1.2),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_un4x7"]
 resource_name = "die"
@@ -225,6 +275,30 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AudioStreamPlayer2D:stream")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_yn47q")]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("AudioStreamPlayer2D:playing")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
 }
 
 [sub_resource type="Animation" id="Animation_l058k"]
@@ -371,6 +445,9 @@ debug_color = Color(0.826441, 0.325684, 1.92523e-07, 0.42)
 shape = SubResource("CircleShape2D_3pcc2")
 disabled = true
 debug_color = Color(0.896576, 0.000198299, 0.774672, 0.42)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_yn47q")
 
 [connection signal="body_entered" from="detection" to="." method="_on_detection_body_entered"]
 [connection signal="body_exited" from="detection" to="." method="_on_detection_body_exited"]
