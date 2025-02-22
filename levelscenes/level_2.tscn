@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://d1v57kk4ppivs"]
+[gd_scene load_steps=13 format=3 uid="uid://d1v57kk4ppivs"]
 
 [ext_resource type="Script" path="res://scripts/manager/levels.gd" id="1_eg5pi"]
 [ext_resource type="PackedScene" uid="uid://chthyc2evagge" path="res://scenes/tilemap/tile_map.tscn" id="1_gwseb"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://dlcyocwbnq5yy" path="res://scenes/UI/coins.tscn" id="10_n3hvq"]
 [ext_resource type="PackedScene" uid="uid://skf3wll8cja" path="res://scenes/objects/interactive/pathway_1.tscn" id="10_yhrf4"]
 [ext_resource type="PackedScene" uid="uid://bd8cw62p5cksa" path="res://scenes/objects/interactive/door_1.tscn" id="11_ecseo"]
+[ext_resource type="PackedScene" uid="uid://bs2rvlspi7gpa" path="res://scenes/objects/interactive/checkpoint.tscn" id="12_03ynk"]
 
 [node name="level2" type="Node2D"]
 script = ExtResource("1_eg5pi")
@@ -87,3 +88,11 @@ position = Vector2(336, 717)
 
 [node name="level2_1Pos" type="Marker2D" parent="."]
 position = Vector2(1964, -77)
+
+[node name="checkpoint" parent="." instance=ExtResource("12_03ynk")]
+position = Vector2(515, -144)
+scale = Vector2(4.10181, 5.92)
+
+[node name="checkpoint2" parent="." instance=ExtResource("12_03ynk")]
+position = Vector2(552, 579)
+scale = Vector2(4.10181, 5.92)
