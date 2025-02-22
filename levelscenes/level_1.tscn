@@ -170,13 +170,13 @@ position = Vector2(1299, -2008)
 position = Vector2(1209, -2148)
 scale = Vector2(1.5, 1.5)
 
-[node name="Player" parent="." instance=ExtResource("1_1hu1r")]
-position = Vector2(1170, -1229)
-scale = Vector2(1.4, 1.4)
-
 [node name="FireSlime" parent="." instance=ExtResource("24_44n6o")]
-position = Vector2(1203, -1880)
+position = Vector2(1193, -1954)
 scale = Vector2(3.5, 3.5)
+
+[node name="Player" parent="." instance=ExtResource("1_1hu1r")]
+position = Vector2(170, 8.99988)
+scale = Vector2(1.4, 1.4)
 
 [node name="TileMap2" parent="." instance=ExtResource("2_uws4v")]
 layer_2/tile_data = PackedInt32Array(-917493, 1835028, 1, -851957, 1835028, 2, -786421, 1835028, 3, -917492, 1900564, 1, -851956, 1900564, 2, -786420, 1900564, 3, -655346, 2031636, 5)

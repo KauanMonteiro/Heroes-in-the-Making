@@ -72,6 +72,8 @@ func _process(delta):
 			_new_dialog.data = _dialog_data2
 			if not MissionManager.mission1rewardGiven:  
 				PlayerManager.coins += 30
+				PlayerManager.adicionar_bonus_vida(1)
+				print(PlayerManager.life_bonus)
 				MissionManager.mission1rewardGiven = true  
 			missioncomplet = true
 		else:

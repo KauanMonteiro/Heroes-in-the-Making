@@ -81,7 +81,7 @@ func _on_attack_body_entered(body):
 func die():
 	if PlayerManager.life <= 0:
 		PlayerManager.is_die = true
-		PlayerManager.life += 3 + PlayerManager.life_bonus
+		PlayerManager.life = PlayerManager.get_vida_maxima()
 		get_tree().reload_current_scene()
 
 func push():
