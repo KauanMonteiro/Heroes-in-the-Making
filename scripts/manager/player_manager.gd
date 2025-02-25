@@ -19,5 +19,4 @@ func _process(delta):
 # Adiciona bônus de vida (chame ao coletar um coração)
 func adicionar_bonus_vida(quantidade: int):
 	life_bonus += quantidade
-	life += quantidade  # Aumenta a vida atual junto
-	print("Vida bônus atualizada:", life_bonus)  # Para debug
+	life += quantidade 

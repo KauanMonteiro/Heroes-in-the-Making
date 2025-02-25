@@ -1,8 +1,8 @@
 extends Node
 
 #missão 1
-var mission1accpet = false
-var goblincount := 10
+var mission1accept = false
+var goblincount := 0
 var mission1complet = false
 var mission1rewardGiven = false
 

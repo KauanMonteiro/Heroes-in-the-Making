@@ -64,4 +64,5 @@ func _on_animation_tree_animation_finished(anim_name):
 		attacking = false
 	elif anim_name == "die":
 		MissionManager.complet_dugeon = true
+		PlayerManager.adicionar_bonus_vida(1)
 		queue_free()

@@ -1,7 +1,6 @@
 extends StaticBody2D
 
-const _DIALOG_SCREEN = preload("res://scenes/UI/dialog_screen.tscn")
-@export var _HUD:CanvasLayer = null
+
 
 var _dialog_data: Dictionary = {
 	0: {
