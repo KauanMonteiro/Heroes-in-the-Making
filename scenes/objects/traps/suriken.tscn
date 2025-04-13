@@ -1,0 +1,277 @@
+[gd_scene load_steps=20 format=3 uid="uid://dphk12aeow0dj"]
+
+[ext_resource type="Texture2D" uid="uid://djpugrtrrsa3e" path="res://assets/trap/Traps/Suriken.png" id="1_7xdlx"]
+[ext_resource type="Script" path="res://scripts/objects/suriken.gd" id="1_8u4qx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5akc8"]
+atlas = ExtResource("1_7xdlx")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iqvmq"]
+atlas = ExtResource("1_7xdlx")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yq2gv"]
+atlas = ExtResource("1_7xdlx")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hpnxw"]
+atlas = ExtResource("1_7xdlx")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yutah"]
+atlas = ExtResource("1_7xdlx")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0y8k8"]
+atlas = ExtResource("1_7xdlx")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2407o"]
+atlas = ExtResource("1_7xdlx")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_imsab"]
+atlas = ExtResource("1_7xdlx")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8nn0s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5akc8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iqvmq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yq2gv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hpnxw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yutah")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0y8k8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2407o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_imsab")
+}],
+"loop": true,
+"name": &"default",
+"speed": 35.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_y7que"]
+radius = 11.1803
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_uj8qf"]
+radius = 14.0
+
+[sub_resource type="Curve2D" id="Curve2D_pvm0p"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 32, 1, 0, 0, 0, 0, 69, 2, 0, 0, 0, 0, 136, 3, 0, 0, 0, 0, 179, 4, 0, 0, 0, 0, 241, 3, 0, 0, 0, 0, 269, -4, 0, 0, 0, 0, 1, 0)
+}
+point_count = 8
+
+[sub_resource type="Animation" id="Animation_dbiv4"]
+resource_name = "action1"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Path2D:curve")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("Curve2D_pvm0p")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Path2D/PathFollow2D:progress")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 268.919]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Path2D/PathFollow2D:progress_ratio")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Path2D/PathFollow2D:rotates")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_yjbxi"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Path2D:curve")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("Curve2D_pvm0p")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Path2D/PathFollow2D:progress")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Path2D/PathFollow2D:progress_ratio")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Path2D/PathFollow2D:rotates")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Curve2D" id="Curve2D_mtvsh"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 32, 0, 0, 0, 0, 0, 63, 0, 0, 0, 0, 0, 109, -12, 0, 0, 0, 0, 118, -35, 0, 0, 0, 0, 117, -73, 0, 0, 0, 0, 90, -92, 0, 0, 0, 0, 45, -98, 0, 0, 0, 0, 8, -97, 0, 0, 0, 0, -32, -88, 0, 0, 0, 0, -51, -55, 0, 0, 0, 0, -57, -5, 0, 0, 0, 0, -52, 25, 0, 0, 0, 0, 1, 37, 0, 0, 0, 0, 86, 62, 0, 0, 0, 0, 199, 56, 0, 0, 0, 0, 220, 24, 0, 0, 0, 0, 202, -21, 0, 0, 0, 0, 191, -50, 0, 0, 0, 0, 179, -81, 0, 0, 0, 0, 174, -87, 0, 0, 0, 0, -1, 0)
+}
+point_count = 22
+
+[sub_resource type="Animation" id="Animation_yurv4"]
+resource_name = "action2"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Path2D:curve")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("Curve2D_mtvsh")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Path2D/PathFollow2D:progress")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1059.87]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Path2D/PathFollow2D:progress_ratio")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2bjbq"]
+_data = {
+"RESET": SubResource("Animation_yjbxi"),
+"action1": SubResource("Animation_dbiv4"),
+"action2": SubResource("Animation_yurv4")
+}
+
+[node name="suriken" type="Node2D"]
+script = ExtResource("1_8u4qx")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(-2, 0)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+sprite_frames = SubResource("SpriteFrames_8nn0s")
+frame_progress = 0.863761
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("CircleShape2D_y7que")
+
+[node name="Area2D" type="Area2D" parent="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Area2D"]
+shape = SubResource("CircleShape2D_uj8qf")
+debug_color = Color(0.904469, 0.000140349, 0.749765, 0.42)
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_pvm0p")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(-1, 0)
+rotation = 0.0322469
+rotates = false
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Path2D/PathFollow2D"]
+position = Vector2(-0.99948, 0.0322413)
+rotation = -0.0322469
+remote_path = NodePath("../../../CharacterBody2D")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_2bjbq")
+}
+
+[connection signal="body_entered" from="CharacterBody2D/Area2D" to="." method="_on_area_2d_body_entered"]

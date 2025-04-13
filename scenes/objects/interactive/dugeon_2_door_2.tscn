@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://c8y00qe6xkj0"]
+
+[ext_resource type="Script" path="res://scripts/objects/dugeon_2_door_2.gd" id="1_yu0au"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pih80"]
+
+[node name="dugeon2door2" type="Area2D"]
+script = ExtResource("1_yu0au")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_pih80")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

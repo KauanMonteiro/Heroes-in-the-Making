@@ -13,12 +13,12 @@ var action := false
 
 var _dialog_data1 := {
 	0: {
-		"faceset": "res://assets/ui/2 Portraits with back/Icons_16.png",
+		"faceset": "res://assets/ui/2 Portraits with back/icon_42.png",
 		"dialog": "Ah, uma nova aventureira em busca de fama, não é? Tenho uma missão para você.",
 		"title": "Lúcia"
 	},
 	1: {
-		"faceset": "res://assets/ui/2 Portraits with back/Icons_16.png",
+		"faceset": "res://assets/ui/2 Portraits with back/icon_42.png",
 		"dialog": "Goblins estão atacando na floresta. Elimine-os para deixar a vila segura.",
 		"title": "Lúcia",
 		"options": [
@@ -30,7 +30,7 @@ var _dialog_data1 := {
 
 var _dialog_data2 := {
 	0: {
-		"faceset": "res://assets/ui/2 Portraits with back/Icons_16.png",
+		"faceset": "res://assets/ui/2 Portraits with back/icon_42.png",
 		"dialog": "Você completou a missão! A vila está segura agora. Obrigada!",
 		"title": "Lúcia"
 	},

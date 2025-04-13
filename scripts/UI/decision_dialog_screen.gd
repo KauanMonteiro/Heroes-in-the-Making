@@ -32,11 +32,6 @@ func _initialize_dialog() -> void:
 	_dialog.text = current_data.get("dialog", "")
 	_faceset.texture = load(current_data.get("faceset", ""))
 	
-	# Animação do texto
-	_dialog.visible_characters = 0
-	while _dialog.visible_ratio < 1:
-		await get_tree().create_timer(_step)
-		_dialog.visible_characters += 1
 	
 	# Mostrar opções se existirem
 	if current_data.has("options"):
@@ -47,7 +42,7 @@ func _initialize_dialog() -> void:
 func _show_options(options: Array) -> void:
 	is_waiting_choice = true
 	_clear_options()
-	
+	 
 	for option in options:
 		if _option_button_template:
 			var new_button = _option_button_template.duplicate()

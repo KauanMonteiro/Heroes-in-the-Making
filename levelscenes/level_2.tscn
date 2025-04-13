@@ -66,7 +66,7 @@ position = Vector2(983, -7)
 position = Vector2(328, 669)
 
 [node name="Player" parent="." instance=ExtResource("2_xd13m")]
-position = Vector2(482, -129)
+position = Vector2(-6, 26)
 
 [node name="Chicken" parent="." instance=ExtResource("13_d3l5i")]
 position = Vector2(863, -161)
@@ -99,7 +99,7 @@ offset_bottom = 40.0
 position = Vector2(1993, -72)
 scale = Vector2(1, 6.84)
 
-[node name="dugeon1" type="Marker2D" parent="."]
+[node name="dugeon1Pos" type="Marker2D" parent="."]
 position = Vector2(336, 720)
 
 [node name="level2_1Pos" type="Marker2D" parent="."]

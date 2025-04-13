@@ -19,7 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://bud1mtvpe1idn" path="res://assets/player/Free Version/Side/Hit.png" id="16_hf0nf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q5m5i"]
-size = Vector2(5, 4)
+size = Vector2(5.75, 4)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_87sl4"]
 size = Vector2(28.25, 16.75)
@@ -2093,7 +2093,6 @@ states/run/position = Vector2(367, 174)
 graph_offset = Vector2(-139, -39)
 
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("_animation_tree")]
-collision_mask = 5
 script = ExtResource("1_bnlev")
 _animation_tree = NodePath("AnimationTree")
 

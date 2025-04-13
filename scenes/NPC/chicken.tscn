@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://scripts/npc/Chicken.gd" id="1_8gih8"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_uc5tp"]
-radius = 6.0
+radius = 8.06225
 
 [sub_resource type="Animation" id="Animation_51d36"]
 length = 0.001
@@ -404,8 +404,8 @@ _data = {
 script = ExtResource("1_8gih8")
 
 [node name="Chicken" type="CharacterBody2D" parent="."]
-position = Vector2(-80, 1)
-rotation = 0.0134194
+position = Vector2(-82, 1)
+rotation = 0.0134201
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Chicken"]
 shape = SubResource("CircleShape2D_uc5tp")
@@ -426,7 +426,7 @@ position = Vector2(5, -6)
 curve = SubResource("Curve2D_xgtdk")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
-position = Vector2(-85, 7)
+position = Vector2(-87, 7)
 rotation = -3.12817
 rotates = false
 

@@ -1,0 +1,109 @@
+[gd_scene load_steps=14 format=3 uid="uid://dti2tohe30ram"]
+
+[ext_resource type="FontFile" uid="uid://cxfl371v85e08" path="res://assets/fonts/hf-free-complete/equipment-pro-v1.1/EquipmentPro.ttf" id="1_fqa8o"]
+[ext_resource type="Script" path="res://scripts/npc/npc_12.gd" id="1_u7l5r"]
+[ext_resource type="Texture2D" uid="uid://c08limi3kpb2r" path="res://assets/ui/Individual Icons/keyboard_15.png" id="2_wsk1y"]
+[ext_resource type="Texture2D" uid="uid://dwh27syqaocc5" path="res://assets/ui/Individual Icons/keyboard_116.png" id="3_yawqf"]
+[ext_resource type="Texture2D" uid="uid://bnse6dcu83ov4" path="res://assets/NPC/free-villagers-sprite-sheets-pixel-art/4 Woman/Woman_idle.png" id="4_kytd1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_n43fe"]
+radius = 70.0286
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_811kb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_wsk1y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_yawqf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6udod"]
+size = Vector2(10, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ec4jf"]
+atlas = ExtResource("4_kytd1")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lqamd"]
+atlas = ExtResource("4_kytd1")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nrisn"]
+atlas = ExtResource("4_kytd1")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_foiki"]
+atlas = ExtResource("4_kytd1")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lwmct"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ec4jf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lqamd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nrisn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_foiki")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="npc_12" type="StaticBody2D" node_paths=PackedStringArray("_HUD", "_HUDTitler")]
+script = ExtResource("1_u7l5r")
+_HUD = NodePath("HUD")
+_HUDTitler = NodePath("CanvasLayer")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_n43fe")
+debug_color = Color(0.924898, 4.43766e-05, 0.678286, 0.42)
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(0, -11)
+scale = Vector2(0.5, 0.5)
+
+[node name="Label" type="Label" parent="Node2D"]
+offset_left = -28.0
+offset_top = -36.0
+offset_right = 39.0
+offset_bottom = -13.0
+theme_override_fonts/font = ExtResource("1_fqa8o")
+text = "interagir"
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Node2D"]
+position = Vector2(38, -28)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_811kb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_6udod")
+debug_color = Color(0.613732, 0.537379, 0, 0.42)
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_lwmct")
+frame_progress = 0.600748
+offset = Vector2(11, -6)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

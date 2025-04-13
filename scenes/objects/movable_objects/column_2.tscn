@@ -3,6 +3,9 @@
 [ext_resource type="Script" path="res://scripts/objects/column.gd" id="1_3pb20"]
 [ext_resource type="Texture2D" uid="uid://cqwliicocqcp2" path="res://assets/tilesets/tilesets1/Texture/TX Props.png" id="2_fkwsj"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xarx2"]
+size = Vector2(26, 52)
+
 [sub_resource type="Animation" id="Animation_ks7uk"]
 length = 0.001
 tracks/0/type = "value"
@@ -453,9 +456,6 @@ _data = {
 "default": SubResource("Animation_e6ige")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xarx2"]
-size = Vector2(26, 52)
-
 [node name="column 2" type="CharacterBody2D" groups=["Pushables"]]
 collision_layer = 4
 collision_mask = 4
@@ -466,10 +466,8 @@ texture = ExtResource("2_fkwsj")
 region_enabled = true
 region_rect = Rect2(226.674, 8.83757, 26.2134, 52.1591)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_vfjy2")
-}
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_xarx2")
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
 position = Vector2(1, 7)
@@ -477,5 +475,7 @@ texture = ExtResource("2_fkwsj")
 region_enabled = true
 region_rect = Rect2(270.08, 29.0548, 5.27011, 26.4856)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_xarx2")
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_vfjy2")
+}

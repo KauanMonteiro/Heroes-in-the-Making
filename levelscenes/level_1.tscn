@@ -178,7 +178,7 @@ position = Vector2(1193, -1954)
 scale = Vector2(3.5, 3.5)
 
 [node name="Player" parent="." instance=ExtResource("1_1hu1r")]
-position = Vector2(170, 8.99988)
+position = Vector2(190, 14.9995)
 scale = Vector2(1.4, 1.4)
 
 [node name="TileMap2" parent="." instance=ExtResource("2_uws4v")]

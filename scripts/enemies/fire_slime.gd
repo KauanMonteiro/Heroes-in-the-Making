@@ -18,6 +18,7 @@ func _on_detection_body_entered(body):
 
 func _on_detection_body_exited(body):
 	if body is Player:
+		_state_machine.travel("idle")
 		player_ref = null
 
 func _physics_process(delta):

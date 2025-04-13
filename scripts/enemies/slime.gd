@@ -15,6 +15,7 @@ func _on_detection_body_entered(body):
 
 func _on_detection_body_exited(body):
 	if body is Player:
+		animation.play("idler")
 		player_ref = null
 
 func _physics_process(_delta):
