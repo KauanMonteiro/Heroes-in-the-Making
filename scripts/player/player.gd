@@ -87,5 +87,6 @@ func die():
 func push():
 	for objects in get_slide_collision_count():
 		var collision = get_slide_collision(objects)
-		if collision.get_collider() is Pushables:
+		if collision.get_collider() is PushableObject or collision.get_collider() is PushableObjectPuzzle:  
 			collision.get_collider().slide_object(-collision.get_normal())
+

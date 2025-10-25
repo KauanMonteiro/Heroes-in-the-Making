@@ -1,0 +1,554 @@
+[gd_scene load_steps=18 format=3 uid="uid://b083i8r5pfhpu"]
+
+[ext_resource type="Script" path="res://scripts/level/init.gd" id="1_cvgjh"]
+[ext_resource type="PackedScene" uid="uid://gbpo1jpvhpns" path="res://scenes/tilemap/3D/wall_astra_straight_2.tscn" id="1_p2jm2"]
+[ext_resource type="PackedScene" uid="uid://digd3fpo20sxf" path="res://scenes/tilemap/3D/wall_astra_corner_round_inner_2.tscn" id="2_p3tmn"]
+[ext_resource type="PackedScene" uid="uid://bn5d2168hwtte" path="res://scenes/tilemap/3D/top_simple_straight_2.tscn" id="4_40u00"]
+[ext_resource type="Texture2D" uid="uid://bsvij3r4goppm" path="res://assets/tilesets/Modular SciFi MegaKit[Standard]/Textures/T_Trim_03_BaseColor.png" id="4_p81ad"]
+[ext_resource type="Texture2D" uid="uid://datanfbvueey3" path="res://assets/tilesets/Modular SciFi MegaKit[Standard]/Textures/T_Trim_03_Normal.png" id="5_0dkmf"]
+[ext_resource type="PackedScene" uid="uid://b1185hu1w024d" path="res://assets/tilesets/Modular SciFi MegaKit[Standard]/glTF/Props/Prop_Computer.gltf" id="5_0p5go"]
+[ext_resource type="PackedScene" uid="uid://b1rtx13y6tdoe" path="res://scenes/tilemap/3D/door_frame_a_2.tscn" id="6_xaj05"]
+[ext_resource type="PackedScene" uid="uid://ct87688y4e0t7" path="res://assets/tilesets/Modular SciFi MegaKit[Standard]/george_2.tscn" id="9_lvo1q"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3umkh"]
+albedo_texture = ExtResource("4_p81ad")
+normal_enabled = true
+normal_texture = ExtResource("5_0dkmf")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_3h8y1"]
+
+[sub_resource type="Animation" id="Animation_ncweg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Então... chegou minha vez?"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D:fov")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [65.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Camera3D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(2.43047, 1.48455, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Camera3D:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -0.163782, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Camera3D:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("ColorRect:color")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0.25098)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("ColorRect:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("George2:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(2.61506, -0.899415, -3.07866)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("George2:rotation")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 3.14159, 0)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("George2:scale")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.4, 0.4, 0.4)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("George2:run")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_5875i"]
+resource_name = "init"
+length = 20.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6, 1.7, 2.7, 3.8, 5, 6.2, 7.5, 8.7, 9.7, 10.6, 11.3, 12.6, 13.6, 14.7, 15.7, 17.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": ["Então... chegou minha vez?", "Sim. Você é uma das últimas a entrar. Outras unidades já iniciaram os testes.", "Outras unidades?", "Bases em regiões diferentes. Mesma simulação, variações de ambiente.  
+Estão colhendo dados sobre comportamento, adaptação, tempo de conclusão.
+", "Pelo menos não sou a única.
+
+", "Mas isso também significa que não podemos errar aqui.  
+Os dados precisam ser limpos.
+", "Certo. E o que eu preciso fazer, exatamente?
+", "Explorar. Observar. Concluir os objetivos.  
+A simulação é fechada — tem início, meio e fim. Você só precisa chegar até o final.", "Ok... alguma recomendação?.", "Sim. Fale o mínimo necessário.", "Por quê?", "A IA de suporte ainda tem instabilidades. Em algumas bases, respostas fora do esperado causaram desvios ou travamentos.", "Falar pouco, seguir o caminho, concluir a missão.", "Exatamente. O cenário vai reagir às suas ações — mas de forma limitada.  
+Você está sendo avaliada. Não pelo que sente, mas pelo que faz.", "E quando eu terminar?", "A simulação se encerra sozinha. Eu estarei monitorando tudo.", "Tudo bem. Vamos começar."]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D:fov")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [65.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Camera3D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.3, 1.7, 16.9, 17.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(2.43047, 1.48455, 0), Vector3(2.43047, 1.48455, -9.02966), Vector3(64.3479, 1.48455, -9.02966), Vector3(64.3479, 1.48455, -7.55743)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Camera3D:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.3, 1.4, 2.2, 3.8, 15.7, 17.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, -0.163782, 0), Vector3(0, -0.163782, 0), Vector3(0, -1.57289, 0), Vector3(0, -1.57289, 0), Vector3(0, -1.57289, 0), Vector3(0, -3.12414, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Camera3D:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.3, 1.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("ColorRect:color")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(17.1, 19.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0.25098), Color(0, 0, 0, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("ColorRect:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 17.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("George2:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.7, 1, 16.1, 16.2, 16.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(2.61506, -0.899415, -3.07866), Vector3(2.61506, -0.899415, -7.28224), Vector3(2.61506, -0.899415, -9.27382), Vector3(62.4607, -0.899415, -9.27382), Vector3(62.4607, -0.899415, -5.85042), Vector3(64.7579, -0.555856, -5.85042)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("George2:rotation")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 0.9, 1, 1.1, 16, 16.1, 16.2, 16.3, 17.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 3.14159, 0), Vector3(0, 3.14159, 0), Vector3(0, -3.14159, 0), Vector3(0, 1.5708, 0), Vector3(0, 1.5708, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 1.5708, 0), Vector3(0, 3.14159, 0)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("George2:scale")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.4, 0.4, 0.4)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("George2:run")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 16.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rub7l"]
+_data = {
+"RESET": SubResource("Animation_ncweg"),
+"init": SubResource("Animation_5875i")
+}
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_st2ps"]
+
+[sub_resource type="Sky" id="Sky_8cycb"]
+sky_material = SubResource("ProceduralSkyMaterial_st2ps")
+
+[sub_resource type="Environment" id="Environment_6ald3"]
+background_mode = 2
+sky = SubResource("Sky_8cycb")
+tonemap_mode = 2
+ssr_enabled = true
+ssao_enabled = true
+ssil_enabled = true
+glow_enabled = true
+
+[node name="init" type="Node3D"]
+script = ExtResource("1_cvgjh")
+
+[node name="wall" type="Node3D" parent="."]
+
+[node name="WallAstra_Straight2" parent="wall" instance=ExtResource("1_p2jm2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.41667, 0, -0.0729251)
+
+[node name="WallAstra_Straight9" parent="wall" instance=ExtResource("1_p2jm2")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.41667, 0, -0.215679)
+
+[node name="WallAstra_Straight10" parent="wall" instance=ExtResource("1_p2jm2")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.35003, 0, -0.215679)
+
+[node name="WallAstra_Straight11" parent="wall" instance=ExtResource("1_p2jm2")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 9.29312, 0.147183, -9.37292)
+
+[node name="WallAstra_Straight12" parent="wall" instance=ExtResource("1_p2jm2")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 9.65203, -0.136466, -8.41083)
+
+[node name="WallAstra_Straight13" parent="wall" instance=ExtResource("1_p2jm2")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 12.8581, 0.147183, -9.37292)
+
+[node name="WallAstra_Straight14" parent="wall" instance=ExtResource("1_p2jm2")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 13.217, -0.136466, -8.41083)
+
+[node name="WallAstra_Straight15" parent="wall" instance=ExtResource("1_p2jm2")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 16.7473, 0.147183, -9.37292)
+
+[node name="WallAstra_Straight16" parent="wall" instance=ExtResource("1_p2jm2")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 17.1062, -0.136466, -8.41083)
+
+[node name="WallAstra_Straight17" parent="wall" instance=ExtResource("1_p2jm2")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 20.3503, 0.147183, -9.37292)
+
+[node name="WallAstra_Straight18" parent="wall" instance=ExtResource("1_p2jm2")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 20.7092, -0.136466, -8.41083)
+
+[node name="WallAstra_Straight19" parent="wall" instance=ExtResource("1_p2jm2")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 24.0792, 0.147183, -9.37292)
+
+[node name="WallAstra_Straight20" parent="wall" instance=ExtResource("1_p2jm2")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 24.4381, -0.136466, -8.41083)
+
+[node name="WallAstra_Straight21" parent="wall" instance=ExtResource("1_p2jm2")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 27.6441, 0.147183, -9.37292)
+
+[node name="WallAstra_Straight22" parent="wall" instance=ExtResource("1_p2jm2")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 28.003, -0.136466, -8.41083)
+
+[node name="WallAstra_Straight23" parent="wall" instance=ExtResource("1_p2jm2")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 31.5333, 0.147183, -9.37292)
+
+[node name="WallAstra_Straight24" parent="wall" instance=ExtResource("1_p2jm2")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 31.8922, -0.136466, -8.41083)
+
+[node name="WallAstra_Straight25" parent="wall" instance=ExtResource("1_p2jm2")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 35.1363, 0.147183, -9.37292)
+
+[node name="WallAstra_Straight26" parent="wall" instance=ExtResource("1_p2jm2")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 35.4953, -0.136466, -8.41083)
+
+[node name="WallAstra_Straight27" parent="wall" instance=ExtResource("1_p2jm2")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 28.5547, 0.147183, -9.37292)
+
+[node name="WallAstra_Straight28" parent="wall" instance=ExtResource("1_p2jm2")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 28.9136, -0.136466, -8.41083)
+
+[node name="WallAstra_Straight29" parent="wall" instance=ExtResource("1_p2jm2")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 32.1197, 0.147183, -9.37292)
+
+[node name="WallAstra_Straight30" parent="wall" instance=ExtResource("1_p2jm2")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 32.4786, -0.136466, -8.41083)
+
+[node name="WallAstra_Straight31" parent="wall" instance=ExtResource("1_p2jm2")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 36.0089, 0.147183, -9.37292)
+
+[node name="WallAstra_Straight32" parent="wall" instance=ExtResource("1_p2jm2")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 36.3678, -0.136466, -8.41083)
+
+[node name="WallAstra_Straight33" parent="wall" instance=ExtResource("1_p2jm2")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 39.6119, 0.147183, -9.37292)
+
+[node name="WallAstra_Straight34" parent="wall" instance=ExtResource("1_p2jm2")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 39.9708, -0.136466, -8.41083)
+
+[node name="WallAstra_Straight35" parent="wall" instance=ExtResource("1_p2jm2")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 43.3408, 0.147183, -9.37292)
+
+[node name="WallAstra_Straight36" parent="wall" instance=ExtResource("1_p2jm2")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 43.6997, -0.136466, -8.41083)
+
+[node name="WallAstra_Straight37" parent="wall" instance=ExtResource("1_p2jm2")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 46.9057, 0.147183, -9.37292)
+
+[node name="WallAstra_Straight38" parent="wall" instance=ExtResource("1_p2jm2")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 47.2646, -0.136466, -8.41083)
+
+[node name="WallAstra_Straight39" parent="wall" instance=ExtResource("1_p2jm2")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 50.7949, 0.147183, -9.37292)
+
+[node name="WallAstra_Straight40" parent="wall" instance=ExtResource("1_p2jm2")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 51.1538, -0.136466, -8.41083)
+
+[node name="WallAstra_Straight41" parent="wall" instance=ExtResource("1_p2jm2")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 54.3979, 0.147183, -9.37292)
+
+[node name="WallAstra_Straight43" parent="wall" instance=ExtResource("1_p2jm2")]
+transform = Transform3D(0.999306, 0, -0.0372367, 0, 1, 0, 0.0372367, 0, 0.999306, 58.306, 0.147183, -5.28466)
+
+[node name="WallAstra_Straight51" parent="wall" instance=ExtResource("1_p2jm2")]
+transform = Transform3D(0.658111, 0, 0.752921, 0, 1, 0, -0.752921, 0, 0.658111, 58.306, 0.147183, -4.2551)
+
+[node name="WallAstra_Straight52" parent="wall" instance=ExtResource("1_p2jm2")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 60.1296, 0.147183, -3.46583)
+
+[node name="WallAstra_Straight53" parent="wall" instance=ExtResource("1_p2jm2")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 63.6833, 0.147183, -3.46583)
+
+[node name="WallAstra_Straight54" parent="wall" instance=ExtResource("1_p2jm2")]
+transform = Transform3D(-0.849193, 0, 0.528083, 0, 1, 0, -0.528083, 0, -0.849193, 64.5403, 0.147183, -3.98766)
+
+[node name="WallAstra_Straight44" parent="wall" instance=ExtResource("1_p2jm2")]
+transform = Transform3D(0.999306, 0, -0.0372367, 0, 1, 0, 0.0372367, 0, 0.999306, 58.4601, 0.147183, -12.5438)
+
+[node name="WallAstra_Straight45" parent="wall" instance=ExtResource("1_p2jm2")]
+transform = Transform3D(0.20077, 0, -0.979638, 0, 1, 0, 0.979638, 0, 0.20077, 58.4601, 0.147183, -12.5438)
+
+[node name="WallAstra_Straight46" parent="wall" instance=ExtResource("1_p2jm2")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 61.7317, 0.147183, -12.808)
+
+[node name="WallAstra_Straight47" parent="wall" instance=ExtResource("1_p2jm2")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 65.423, 0.147183, -12.808)
+
+[node name="WallAstra_Straight48" parent="wall" instance=ExtResource("1_p2jm2")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 65.2669, 0.147183, -13.6174)
+
+[node name="WallAstra_Straight49" parent="wall" instance=ExtResource("1_p2jm2")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 65.2669, 0.147183, -10.142)
+
+[node name="WallAstra_Straight50" parent="wall" instance=ExtResource("1_p2jm2")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 65.2669, 0.147183, -6.25792)
+
+[node name="WallAstra_Straight42" parent="wall" instance=ExtResource("1_p2jm2")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 55.0638, -0.136466, -8.41083)
+
+[node name="WallAstra_Straight3" parent="wall" instance=ExtResource("1_p2jm2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.41667, 0, -4.05999)
+
+[node name="WallAstra_Straight4" parent="wall" instance=ExtResource("1_p2jm2")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 5.36076, 0, -2.96573)
+
+[node name="WallAstra_Straight6" parent="wall" instance=ExtResource("1_p2jm2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.41667, 0, -3.95933)
+
+[node name="WallAstra_Straight7" parent="wall" instance=ExtResource("1_p2jm2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.41667, 0, -7.94639)
+
+[node name="WallAstra_Straight8" parent="wall" instance=ExtResource("1_p2jm2")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 5.36076, 0, -5.33954)
+
+[node name="WallAstra_Straight5" parent="wall" instance=ExtResource("1_p2jm2")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 5.35806, 0, 0.754995)
+
+[node name="WallAstra_Corner_Round_Inner2" parent="wall" instance=ExtResource("2_p3tmn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.38857, -0.074447, -9.84877)
+
+[node name="WallAstra_Corner_Round_Inner3" parent="wall" instance=ExtResource("2_p3tmn")]
+transform = Transform3D(0.165324, 0.043166, -0.985294, -0.00714302, 0.999068, 0.0425709, 0.986214, 0, 0.165478, 3.94221, -0.074447, -9.84877)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="wall"]
+transform = Transform3D(-20, 1.74846e-06, 0, -1.74846e-06, -20, 0, 0, 0, 20, 18.1518, 3.09005, -4.91026)
+material_override = SubResource("StandardMaterial3D_3umkh")
+mesh = SubResource("PlaneMesh_3h8y1")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="wall"]
+transform = Transform3D(90, 0, 0, 0, 90, 0, 0, 0, 90, 9.35946, -0.85955, -21.2969)
+material_override = SubResource("StandardMaterial3D_3umkh")
+mesh = SubResource("PlaneMesh_3h8y1")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="wall"]
+transform = Transform3D(-20, 1.74846e-06, 0, -1.74846e-06, -20, 0, 0, 0, 20, 58.0677, 3.09005, -4.91026)
+material_override = SubResource("StandardMaterial3D_3umkh")
+mesh = SubResource("PlaneMesh_3h8y1")
+
+[node name="decoration" type="Node3D" parent="."]
+
+[node name="Prop_Computer2" parent="decoration" instance=ExtResource("5_0p5go")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64.4667, 0, -6.69287)
+
+[node name="Door_Frame_A2" parent="decoration" instance=ExtResource("6_xaj05")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 55.6046, 0, -8.85399)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_rub7l")
+}
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.986618, 0, -0.163051, 0, 1, 0, 0.163051, 0, 0.986618, 2.43047, 1.48455, 0)
+fov = 65.0
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -296.0
+offset_top = -44.0
+offset_right = 298.0
+offset_bottom = -21.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(1.4, 1.4)
+text = "Então... chegou minha vez?"
+
+[node name="TopSimple_Straight2" parent="." instance=ExtResource("4_40u00")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64.591, 0, -7.98845)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_6ald3")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.25098)
+
+[node name="George2" parent="." instance=ExtResource("9_lvo1q")]
+transform = Transform3D(-0.4, 0, 1.01407e-06, 0, 0.4, 0, -1.01407e-06, 0, -0.4, 2.61506, -0.899415, -3.07866)
+run = true

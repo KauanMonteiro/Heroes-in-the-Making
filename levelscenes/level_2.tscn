@@ -62,11 +62,11 @@ position = Vector2(1201, -12)
 [node name="goblinMission10" parent="." instance=ExtResource("9_6pomd")]
 position = Vector2(983, -7)
 
-[node name="dugeon_1" parent="." instance=ExtResource("11_ecseo")]
+[node name="dungeon_1" parent="." instance=ExtResource("11_ecseo")]
 position = Vector2(328, 669)
 
 [node name="Player" parent="." instance=ExtResource("2_xd13m")]
-position = Vector2(-6, 26)
+position = Vector2(0, 19)
 
 [node name="Chicken" parent="." instance=ExtResource("13_d3l5i")]
 position = Vector2(863, -161)
@@ -99,7 +99,7 @@ offset_bottom = 40.0
 position = Vector2(1993, -72)
 scale = Vector2(1, 6.84)
 
-[node name="dugeon1Pos" type="Marker2D" parent="."]
+[node name="dungeon1Pos" type="Marker2D" parent="."]
 position = Vector2(336, 720)
 
 [node name="level2_1Pos" type="Marker2D" parent="."]
@@ -112,3 +112,6 @@ scale = Vector2(4.10181, 5.92)
 [node name="checkpoint2" parent="." instance=ExtResource("12_03ynk")]
 position = Vector2(336, 728)
 scale = Vector2(10.48, 1)
+
+[node name="level1Pos" type="Marker2D" parent="."]
+position = Vector2(0, 29)

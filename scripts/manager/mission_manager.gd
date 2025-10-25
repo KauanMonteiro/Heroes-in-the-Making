@@ -17,7 +17,7 @@ var collectedbook = false
 var devil_end_talk = false
 
 #mission3
-var mission3accept = false
+var mission3accept = true
 var mission3complet = true
 var monstercount := 0
 var mission3rewardGiven = false
@@ -34,15 +34,17 @@ func _process(delta):
 	mission3()
 	
 func mission3():
-	if monstercount == 10:
+	if monstercount == 107:
 		mission3complet = true
-		
+
+
 func mission1():
 	if goblincount == 10:
 		mission1complet = true
 func mission2():
 	if collectedbook:
-		mission1complet = true
+		mission2complet = true
+		
 func ResetMission():
 	if !mission1complet:
 		goblincount = 0

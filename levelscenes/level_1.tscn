@@ -169,7 +169,7 @@ position = Vector2(1246, -2008)
 [node name="WallBossSlime4" parent="." instance=ExtResource("23_tlt0m")]
 position = Vector2(1299, -2008)
 
-[node name="teleportationLevel2" parent="." instance=ExtResource("26_6ywgd")]
+[node name="level_2" parent="." instance=ExtResource("26_6ywgd")]
 position = Vector2(1209, -2148)
 scale = Vector2(1.5, 1.5)
 
@@ -178,7 +178,7 @@ position = Vector2(1193, -1954)
 scale = Vector2(3.5, 3.5)
 
 [node name="Player" parent="." instance=ExtResource("1_1hu1r")]
-position = Vector2(190, 14.9995)
+position = Vector2(1054, -1147)
 scale = Vector2(1.4, 1.4)
 
 [node name="TileMap2" parent="." instance=ExtResource("2_uws4v")]

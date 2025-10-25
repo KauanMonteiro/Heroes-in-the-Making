@@ -1,0 +1,18 @@
+[gd_scene load_steps=6 format=3 uid="uid://bn5d2168hwtte"]
+
+[ext_resource type="PackedScene" uid="uid://ug25qcayd7fu" path="res://assets/tilesets/Modular SciFi MegaKit[Standard]/glTF/Walls/TopSimple_Straight.gltf" id="1_6d1uj"]
+[ext_resource type="Texture2D" uid="uid://dwmqjro3ge2m8" path="res://assets/tilesets/Modular SciFi MegaKit[Standard]/Textures/T_PaddedWall_BaseColor.png" id="2_j856p"]
+[ext_resource type="Texture2D" uid="uid://bd2ie7yixukvk" path="res://assets/tilesets/Modular SciFi MegaKit[Standard]/Textures/T_PaddedWall_Normal.png" id="3_5alkh"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0q1sr"]
+albedo_texture = ExtResource("2_j856p")
+normal_enabled = true
+normal_texture = ExtResource("3_5alkh")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_jx430"]
+
+[node name="TopSimple_Straight2" instance=ExtResource("1_6d1uj")]
+
+[node name="TopSimple_Straight" parent="." index="0"]
+material_override = SubResource("StandardMaterial3D_0q1sr")
+mesh = SubResource("PlaneMesh_jx430")

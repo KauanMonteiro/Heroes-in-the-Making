@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://dgeb1vgib0tif"]
+
+[ext_resource type="Script" path="res://scripts/objects/push_object_generic.gd" id="1_13rwf"]
+[ext_resource type="Texture2D" uid="uid://bpwgvg0qaag2a" path="res://assets/tilesets/Pixel Crawler - Free Pack 2.0.4/Pixel Crawler - Free Pack/Environment/Props/Static/Furniture.png" id="2_3erom"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_83aew"]
+size = Vector2(32, 24)
+
+[node name="table" type="CharacterBody2D" groups=["Pushables"]]
+script = ExtResource("1_13rwf")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_3erom")
+region_enabled = true
+region_rect = Rect2(48, 24.7291, 32, 23.2709)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_83aew")

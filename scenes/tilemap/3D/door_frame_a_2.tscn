@@ -1,0 +1,18 @@
+[gd_scene load_steps=6 format=3 uid="uid://b1rtx13y6tdoe"]
+
+[ext_resource type="PackedScene" uid="uid://bhvpq5uc3inuj" path="res://assets/tilesets/Modular SciFi MegaKit[Standard]/glTF/Platforms/Door_Frame_A.gltf" id="1_l3vif"]
+[ext_resource type="Texture2D" uid="uid://cgwayv27jlevp" path="res://assets/tilesets/Modular SciFi MegaKit[Standard]/Textures/T_Trim_01_BaseColor.png" id="2_4aevi"]
+[ext_resource type="Texture2D" uid="uid://cuwacpgvhu814" path="res://assets/tilesets/Modular SciFi MegaKit[Standard]/Textures/T_Trim_01_Emissive.png" id="3_0rima"]
+[ext_resource type="Texture2D" uid="uid://cj8vwptaatxgb" path="res://assets/tilesets/Modular SciFi MegaKit[Standard]/Textures/T_Trim_01_Normal.png" id="3_42052"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dc3bo"]
+albedo_texture = ExtResource("2_4aevi")
+emission_enabled = true
+emission_texture = ExtResource("3_0rima")
+normal_enabled = true
+normal_texture = ExtResource("3_42052")
+
+[node name="Door_Frame_A2" instance=ExtResource("1_l3vif")]
+
+[node name="Door_Frame_A" parent="." index="0"]
+material_override = SubResource("StandardMaterial3D_dc3bo")

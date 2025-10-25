@@ -1,5 +1,5 @@
 extends CharacterBody2D
-class_name Pushables
+class_name PushableObjectPuzzle
 
 const PUSH_SPEED = 150
 @export var column_id = 1

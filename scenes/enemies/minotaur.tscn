@@ -1,6 +1,6 @@
 [gd_scene load_steps=19 format=3 uid="uid://cw7g3fi8k01v5"]
 
-[ext_resource type="Texture2D" uid="uid://bkhkwfgqe6yf1" path="res://assets/tilesets/Evil Dungeon/minoson.png" id="1_eofug"]
+[ext_resource type="Texture2D" uid="uid://bkhkwfgqe6yf1" path="res://assets/Evil Dungeon/minoson.png" id="1_eofug"]
 [ext_resource type="Script" path="res://scripts/npc/minotaur.gd" id="1_kknwp"]
 [ext_resource type="FontFile" uid="uid://cxfl371v85e08" path="res://assets/fonts/hf-free-complete/equipment-pro-v1.1/EquipmentPro.ttf" id="3_i8ujn"]
 [ext_resource type="Texture2D" uid="uid://c08limi3kpb2r" path="res://assets/ui/Individual Icons/keyboard_15.png" id="4_xar7r"]

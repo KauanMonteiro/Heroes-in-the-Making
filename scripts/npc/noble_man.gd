@@ -8,22 +8,22 @@ class_name NPC
 
 @export_category("HUD")
 @export var _HUD: CanvasLayer
-@export var _HUDTitler: CanvasLayer
 
 const MISSIONTITLER := preload("res://scenes/UI/missiontitler.tscn")
 const DIALOG_SCREEN := preload("res://scenes/UI/decision_dialog_screen.tscn")
-var _titler_mission := {}
-var mission_titler_instance: Control = null
+const ENEMY_SCENE := preload("res://scenes/enemies/goblin.tscn")
+
 var action := false
 var life := 10
 var missioncomplet := false
+var has_shown_completion_message := false
+var walkend = false
 
 var _dialog_data1 := {
 	0: {
 		"faceset": "res://assets/NPC/RPGCharactersPortraits+SpritesPack2Demo/NobleMan/Original/PortraitAndShowcase/noblemanPortrait.jpeg",
 		"dialog": "Ei você... Quanto cobraria para... digamos... resolver uma situação delicada?",
 		"title": "Nobre ",
-		
 	},
 	1: {
 		"faceset": "res://assets/NPC/RPGCharactersPortraits+SpritesPack2Demo/NobleMan/Original/PortraitAndShowcase/noblemanPortrait.jpeg",
@@ -35,6 +35,7 @@ var _dialog_data1 := {
 		]
 	}
 }
+
 var _dialog_data2 := {
 	0: {
 		"faceset": "res://assets/NPC/RPGCharactersPortraits+SpritesPack2Demo/NobleMan/Original/PortraitAndShowcase/noblemanPortrait.jpeg",
@@ -48,13 +49,18 @@ var _dialog_data2 := {
 }
 
 func _ready() -> void:
+	if MissionManager.mission3_1complet:
+		queue_free()
+	run_back = false
+	run_front = false
+	run_side = false
 	$CharacterBody2D/AnimationPlayer.play("idler")
 	$Node2D.visible = false
 
 func _process(delta: float) -> void:
 	update_animations()
 	handle_interaction()
-	update_mission_title()  
+	update_mission_title()
 
 func update_animations():
 	if run_back:
@@ -63,6 +69,8 @@ func update_animations():
 		$CharacterBody2D/AnimationPlayer.play("run_front")
 	elif run_side:
 		$CharacterBody2D/AnimationPlayer.play("run_side")
+	else:
+		$CharacterBody2D/AnimationPlayer.play("idler")
 
 func handle_interaction():
 	if action and Input.is_action_just_pressed("interact"):
@@ -88,31 +96,53 @@ func _on_option_selected(result: String) -> void:
 		"aceito_escolta":
 			MissionManager.mission3_1accept = true
 			$AnimationPlayer.play("walk")
+			add_enemies_to_scene()
+			await $AnimationPlayer.animation_finished
+			MissionManager.mission3_1complet = true
+			GlobalUi.clear_mission_titler()
+			queue_free()
 		"nego", "nego_escolta":
 			pass
+			
+func add_enemies_to_scene() -> void:
+	var enemy_positions = [
+		Vector2(1822, -270),
+		Vector2(1893, -225)
+	]
 
+	for pos in enemy_positions:
+		var enemy = ENEMY_SCENE.instantiate()
+		enemy.position = pos
+		enemy.enemy_type = "Mission3"
+		get_tree().current_scene.add_child(enemy)
 func update_mission_title():
 	if !missioncomplet and !PlayerManager.is_die:
-		if mission_titler_instance:
-			mission_titler_instance.queue_free()
-	
-	if MissionManager.mission3accept:
-		var mission_text: String
-		if !MissionManager.mission3complet:
-			_titler_mission = {
-				0: {
-					"titler": "Vá até a casa do nobre e derrote os monstros %d/10" % MissionManager.monstercount
+		if MissionManager.mission3accept:
+			if !MissionManager.mission3complet:
+				var titler_data = {
+					0: {
+						"titler": "Vá até a casa do nobre e derrote todos os monstros" 
 					}
 				}
-		else:
-			_titler_mission = {
-				0: {
-					"titler": "Missão concluída. Fale com o nobre para pegar sua recompensa."
+				create_or_update_titler(titler_data)
+			else:
+				if not has_shown_completion_message:
+					GlobalUi.clear_mission_titler()
+
+					var return_message := {
+						0: {
+							"titler": "Volte para falar com o nobre."
+						}
 					}
-				}
-		mission_titler_instance = MISSIONTITLER.instantiate()
-		mission_titler_instance.data_titler = _titler_mission
-		_HUDTitler.add_child(mission_titler_instance)
+
+					create_or_update_titler(return_message)
+					has_shown_completion_message = true
+					missioncomplet = true
+
+func create_or_update_titler(data):
+	var titler_instance = MISSIONTITLER.instantiate()
+	titler_instance.data_titler = data
+	GlobalUi.add_mission_titler(titler_instance)
 
 func _on_area_2d_body_entered(body: Node) -> void:
 	if body is Player:
@@ -133,4 +163,5 @@ func close_all_dialogs():
 
 func die():
 	if life <= 0:
+		GlobalUi.clear_mission_titler()
 		queue_free()

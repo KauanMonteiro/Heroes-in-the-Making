@@ -62,10 +62,9 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="npc_12" type="StaticBody2D" node_paths=PackedStringArray("_HUD", "_HUDTitler")]
+[node name="npc_12" type="StaticBody2D" node_paths=PackedStringArray("_HUD")]
 script = ExtResource("1_u7l5r")
 _HUD = NodePath("HUD")
-_HUDTitler = NodePath("CanvasLayer")
 
 [node name="Area2D" type="Area2D" parent="."]
 

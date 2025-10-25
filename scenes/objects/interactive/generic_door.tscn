@@ -1,8 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://dflkklegpy572"]
+[gd_scene load_steps=5 format=3 uid="uid://dflkklegpy572"]
 
 [ext_resource type="Script" path="res://scripts/objects/generic_door.gd" id="1_86wcy"]
+[ext_resource type="FontFile" uid="uid://cxfl371v85e08" path="res://assets/fonts/hf-free-complete/equipment-pro-v1.1/EquipmentPro.ttf" id="2_86v1c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x67se"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ojc2u"]
+radius = 17.1172
 
 [node name="genericDoor" type="Area2D"]
 script = ExtResource("1_86wcy")
@@ -10,4 +14,23 @@ script = ExtResource("1_86wcy")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_x67se")
 
+[node name="Node2D" type="Node2D" parent="."]
+scale = Vector2(0.5, 0.5)
+
+[node name="Label" type="Label" parent="Node2D"]
+offset_left = -42.0
+offset_top = -56.0
+offset_right = 48.0
+offset_bottom = -33.0
+theme_override_fonts/font = ExtResource("2_86v1c")
+text = "Porta trancada"
+metadata/_edit_use_anchors_ = true
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_ojc2u")
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

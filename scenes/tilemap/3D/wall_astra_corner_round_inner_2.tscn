@@ -1,0 +1,22 @@
+[gd_scene load_steps=6 format=3 uid="uid://digd3fpo20sxf"]
+
+[ext_resource type="PackedScene" uid="uid://cixghkj30bd5q" path="res://assets/tilesets/Modular SciFi MegaKit[Standard]/glTF/Walls/WallAstra_Corner_Round_Inner.gltf" id="1_rntwy"]
+[ext_resource type="Texture2D" uid="uid://cgwayv27jlevp" path="res://assets/tilesets/Modular SciFi MegaKit[Standard]/Textures/T_Trim_01_BaseColor.png" id="2_fci82"]
+[ext_resource type="Texture2D" uid="uid://uofn1ii027ek" path="res://assets/tilesets/Modular SciFi MegaKit[Standard]/Textures/T_Trim_01_DetailMask.png" id="3_il75x"]
+[ext_resource type="Texture2D" uid="uid://cj8vwptaatxgb" path="res://assets/tilesets/Modular SciFi MegaKit[Standard]/Textures/T_Trim_01_Normal.png" id="4_qdsif"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ox13p"]
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("2_fci82")
+normal_enabled = true
+normal_texture = ExtResource("4_qdsif")
+detail_enabled = true
+detail_mask = ExtResource("3_il75x")
+detail_blend_mode = 1
+detail_albedo = ExtResource("2_fci82")
+detail_normal = ExtResource("4_qdsif")
+
+[node name="WallAstra_Corner_Round_Inner2" instance=ExtResource("1_rntwy")]
+
+[node name="WallAstra_Corner_Round_Inner" parent="." index="0"]
+material_override = SubResource("StandardMaterial3D_ox13p")

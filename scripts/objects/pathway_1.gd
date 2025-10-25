@@ -7,5 +7,5 @@ func _on_body_entered(body):
 
 func change_scene():
 	GameManager.from_scene = get_parent().name
-	print("Salvando from_scene: ", GameManager.from_scene)  # Depuração
+	print("Salvando from_scene: ", GameManager.from_scene) 
 	get_tree().change_scene_to_file("res://levelscenes/"+name+".tscn")

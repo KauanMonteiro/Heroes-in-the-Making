@@ -11,3 +11,5 @@ func _ready():
 func _enter_tree():
 	if GameManager.last_position:
 		$Player.global_position = GameManager.last_position
+
+

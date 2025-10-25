@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://2q4bkdcq060s"]
+
+[ext_resource type="Script" path="res://scripts/objects/push_object_generic.gd" id="1_wp2ny"]
+[ext_resource type="Texture2D" uid="uid://bpwgvg0qaag2a" path="res://assets/tilesets/Pixel Crawler - Free Pack 2.0.4/Pixel Crawler - Free Pack/Environment/Props/Static/Furniture.png" id="2_t0hun"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q06y6"]
+size = Vector2(30, 44)
+
+[node name="bookshelf" type="CharacterBody2D" groups=["Pushables"]]
+script = ExtResource("1_wp2ny")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_t0hun")
+region_enabled = true
+region_rect = Rect2(0.242791, 98.1919, 31.4854, 45.6172)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_q06y6")

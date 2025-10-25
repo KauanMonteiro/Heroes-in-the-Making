@@ -18,7 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://dwh27syqaocc5" path="res://assets/ui/Individual Icons/keyboard_116.png" id="16_0llgq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_brrmt"]
-size = Vector2(11, 26)
+size = Vector2(9, 5.5)
 
 [sub_resource type="Animation" id="Animation_u0v7j"]
 length = 0.001
@@ -69,6 +69,42 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("..:run_back")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("..:run_front")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("..:run_side")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_1kllj"]
@@ -121,6 +157,42 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("..:run_back")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("..:run_front")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("..:run_side")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_3ofhe"]
@@ -291,11 +363,11 @@ _data = {
 "run_side": SubResource("Animation_wt876")
 }
 
-[sub_resource type="Curve2D" id="Curve2D_nw20i"]
+[sub_resource type="Curve2D" id="Curve2D_0gxbr"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 0, 14, 0, 0, 0, 0, -1, 33, 0, 0, 0, 0, -1, 51, 0, 0, 0, 0, 14, 57, 0, 0, 0, 0, 81, 54, 0, 0, 0, 0, 119, 52, 0, 0, 0, 0, 162, 41, 0, 0, 0, 0, 174, 15, 0, 0, 0, 0, 225, -9, 0, 0, 0, 0, 299, -34, 0, 0, 0, 0, 335, -47, 0, 0, 0, 0, 378, -53, 0, 0, 0, 0, 467, -53, 0, 0, 0, 0, 509, -59, 0, 0, 0, 0, 524, -74, 0, 0, 0, 0, 565, -100, 0, 0, 0, 0, 608, -117, 0, 0, 0, 0, 642, -118, 0, 0, 0, 0, 671, -115, 0, 0, 0, 0, 697, -99, 0, 0, 0, 0, 716, -80, 0, 0, 0, 0, 731, -67, 0, 0, 0, 0, 755, -47, 0, 0, 0, 0, 774, -30, 0, 0, 0, 0, 831, -17, 0, 0, 0, 0, 858, -29, 0, 0, 0, 0, 904, -61, 0, 0, 0, 0, 929, -95, 0, 0, 0, 0, 934, -150, 0, 0, 0, 0, 927, -193, 0, 0, 0, 0, 937, -247, 0, 0, 0, 0, 935, -292, 0, 0, 0, 0, 946, -322, 0, 0, 0, 0, 989, -336, 0, 0, 0, 0, 1039, -347, 0, 0, 0, 0, 1051, -367, 0, 0, 0, 0, 1063, -393, 0, 0, 0, 0, 1066, -418, 0, 0, 0, 0, 1068, -432)
+"points": PackedVector2Array(0, 0, 0, 0, 0, 29, 0, 0, 0, 0, 967, 26, 0, 0, 0, 0, 1074, -90, 0, 0, 0, 0, 1074, -440)
 }
-point_count = 39
+point_count = 4
 
 [sub_resource type="Animation" id="Animation_gd7o2"]
 length = 0.001
@@ -309,7 +381,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [SubResource("Curve2D_nw20i")]
+"values": [SubResource("Curve2D_0gxbr")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -326,43 +398,43 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Path2D/PathFollow2D:rotates")
+tracks/2/path = NodePath("Path2D/PathFollow2D:progress_ratio")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
+"update": 0,
+"values": [0.0]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Path2D/PathFollow2D:progress_ratio")
+tracks/3/path = NodePath("Path2D/PathFollow2D:rotates")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
+"update": 1,
+"values": [false]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath(".:run_side")
+tracks/4/path = NodePath("Path2D/PathFollow2D/RemoteTransform2D:remote_path")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [NodePath("../../../CharacterBody2D")]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath(".:run_back")
+tracks/5/path = NodePath(".:run_side")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -374,14 +446,14 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath(".:run_front")
+tracks/6/path = NodePath(".:run_back")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_dacy6"]
@@ -397,7 +469,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [SubResource("Curve2D_nw20i")]
+"values": [SubResource("Curve2D_0gxbr")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -409,67 +481,67 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 20),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0.0, 1496.72]
+"values": [0.0, 1474.81]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Path2D/PathFollow2D:rotates")
+tracks/2/path = NodePath("Path2D/PathFollow2D:progress_ratio")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Path2D/PathFollow2D:progress_ratio")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
 "times": PackedFloat32Array(0, 20),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, 1.0]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Path2D/PathFollow2D:rotates")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath(".:run_side")
+tracks/4/path = NodePath("Path2D/PathFollow2D/RemoteTransform2D:remote_path")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.5, 2.7, 3.2, 12.7, 20),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false, true, false, true, false, false]
+"values": [NodePath("../../../CharacterBody2D")]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath(".:run_back")
+tracks/5/path = NodePath(".:run_side")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0, 2.7, 3.2, 12.7, 20),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 15.4),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [false, true, false, true, false]
+"values": [true, false]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath(".:run_front")
+tracks/6/path = NodePath(".:run_back")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(0, 20),
+"times": PackedFloat32Array(0, 15.4),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [false, false]
+"values": [false, true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_afgo2"]
@@ -495,18 +567,17 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_q7b4k"]
 radius = 70.0286
 
-[node name="NobleMan" type="Node2D" node_paths=PackedStringArray("_HUD", "_HUDTitler")]
+[node name="NobleMan" type="Node2D" node_paths=PackedStringArray("_HUD")]
 script = ExtResource("1_y5j02")
 run_back = true
 run_side = true
 _HUD = NodePath("HUD")
-_HUDTitler = NodePath("CanvasLayer")
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-position = Vector2(0, 14)
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." groups=["nobleman"]]
+position = Vector2(1074, -220.947)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(-0.5, 3)
+position = Vector2(0, 13.25)
 shape = SubResource("RectangleShape2D_brrmt")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
@@ -518,10 +589,10 @@ libraries = {
 }
 
 [node name="Path2D" type="Path2D" parent="."]
-curve = SubResource("Curve2D_nw20i")
+curve = SubResource("Curve2D_0gxbr")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
-position = Vector2(0, 14)
+position = Vector2(1074, -220.947)
 rotates = false
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Path2D/PathFollow2D"]

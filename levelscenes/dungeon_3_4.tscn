@@ -1,0 +1,116 @@
+[gd_scene load_steps=8 format=3 uid="uid://dn0cde3ik7jjd"]
+
+[ext_resource type="PackedScene" uid="uid://dx8heb46x0fpv" path="res://scenes/NPC/noble_man.tscn" id="1_fkp7b"]
+[ext_resource type="PackedScene" uid="uid://chthyc2evagge" path="res://scenes/tilemap/tile_map.tscn" id="2_dw65l"]
+[ext_resource type="Texture2D" uid="uid://c1c0msp0ki80d" path="res://assets/tilesets/Evil Dungeon/pentagramm.png" id="3_ehdb5"]
+[ext_resource type="PackedScene" uid="uid://baa7cag77wr0q" path="res://scenes/enemies/zombie_2_mission.tscn" id="4_86g8w"]
+[ext_resource type="PackedScene" uid="uid://bkr2g0cnwoiyv" path="res://scenes/enemies/zombiemission.tscn" id="5_l17f6"]
+[ext_resource type="PackedScene" uid="uid://ui5mhnb848of" path="res://scenes/Player/player.tscn" id="6_mw8g1"]
+[ext_resource type="PackedScene" uid="uid://skf3wll8cja" path="res://scenes/objects/interactive/pathway_1.tscn" id="7_uyrej"]
+
+[node name="dungeon_3_4" type="Node2D"]
+
+[node name="NobleMan" parent="." instance=ExtResource("1_fkp7b")]
+position = Vector2(-1073, 1443)
+
+[node name="TileMap" parent="." instance=ExtResource("2_dw65l")]
+layer_1/tile_data = PackedInt32Array(65531, 327710, 1, 131067, 327710, 1, 196603, 589854, 11, 262139, 327710, 1, 327675, 327710, 1, 393211, 327710, 1, 458747, 327710, 1, 524283, 327710, 1, 65532, 327710, 1, 131068, 327710, 1, 196604, 327710, 1, 262140, 327710, 1, 327676, 327710, 1, 393212, 327710, 1, 458748, 327710, 1, 524284, 327710, 1, 65533, 327710, 1, 131069, 327710, 1, 196605, 327710, 1, 262141, 327710, 1, 327677, 327710, 1, 393213, 327710, 1, 458749, 327710, 1, 524285, 327710, 1, 65534, 327710, 1, 131070, 327710, 1, 196606, 327710, 1, 262142, 327710, 1, 327678, 327710, 1, 393214, 327710, 1, 458750, 327710, 1, 524286, 327710, 1, 65535, 327710, 1, 131071, 327710, 1, 196607, 327710, 1, 262143, 458782, 13, 327679, 327710, 1, 393215, 327710, 1, 458751, 327710, 1, 524287, 327710, 1, 0, 327710, 1, 65536, 327710, 1, 131072, 327710, 1, 196608, 327710, 1, 262144, 327710, 1, 327680, 327710, 1, 393216, 327710, 1, 458752, 327710, 1, 1, 327710, 1, 65537, 327710, 1, 131073, 327710, 1, 196609, 327710, 1, 262145, 327710, 1, 327681, 327710, 1, 393217, 327710, 1, 458753, 327710, 1, 2, 327710, 1, 65538, 327710, 1, 131074, 327710, 1, 196610, 327710, 1, 262146, 327710, 1, 327682, 327710, 1, 393218, 327710, 1, 458754, 327710, 1, 3, 327710, 1, 65539, 327710, 1, 131075, 327710, 1, 196611, 524318, 12, 262147, 524318, 13, 327683, 327710, 1, 393219, 327710, 1, 458755, 327710, 1, 4, 327710, 1, 65540, 327710, 1, 131076, 327710, 1, 196612, 589854, 12, 262148, 589854, 13, 327684, 327710, 1, 393220, 327710, 1, 458756, 327710, 1)
+layer_2/tile_data = PackedInt32Array(-131078, 196638, 4, -65542, 196638, 5, -6, 196638, 5, 65530, 196638, 5, 131066, 196638, 5, 196602, 196638, 5, 262138, 196638, 5, 327674, 196638, 5, 393210, 196638, 5, 458746, 196638, 5, 524282, 196638, 5, 589818, 196638, 6, -131077, 196638, 0, -65541, 196638, 1, -5, 196638, 2, 65531, 196638, 3, 589819, 65566, 3, -131076, 65566, 0, -65540, 65566, 1, -4, 65566, 2, 589820, 65566, 3, -131075, 65566, 0, -65539, 65566, 1, -3, 65566, 2, 589821, 65566, 3, -131074, 65566, 0, -65538, 65566, 1, -2, 65566, 2, 589822, 65566, 3, -131073, 65566, 0, -65537, 65566, 1, -1, 65566, 2, 589823, 65566, 3, -196608, 65566, 0, -131072, 65566, 1, -65536, 65566, 2, 524288, 65566, 3, -196607, 65566, 0, -131071, 65566, 1, -65535, 65566, 2, 524289, 65566, 3, -196606, 65566, 0, -131070, 65566, 1, -65534, 65566, 2, 524290, 65566, 3, -196605, 65566, 0, -131069, 65566, 1, -65533, 65566, 2, 524291, 65566, 3, -196604, 196638, 0, -131068, 196638, 1, -65532, 196638, 2, 4, 196638, 3, 524292, 65566, 3, -196603, 262174, 4, -131067, 262174, 5, -65531, 262174, 5, 5, 262174, 5, 65541, 262174, 5, 131077, 262174, 5, 196613, 262174, 5, 262149, 262174, 5, 327685, 262174, 5, 393221, 262174, 5, 458757, 262174, 5, 524293, 262174, 6)
+
+[node name="Pentagramm" type="Sprite2D" parent="."]
+position = Vector2(-9, 55)
+rotation = -3.14159
+texture = ExtResource("3_ehdb5")
+region_enabled = true
+region_rect = Rect2(0.565842, 33.0658, 122.645, 100.579)
+
+[node name="inimigos" type="Node2D" parent="."]
+
+[node name="zombie2mission" parent="inimigos" instance=ExtResource("4_86g8w")]
+position = Vector2(-69, 9)
+life = 5.0
+
+[node name="zombie2mission2" parent="inimigos" instance=ExtResource("4_86g8w")]
+position = Vector2(-46, 5)
+
+[node name="zombie2mission3" parent="inimigos" instance=ExtResource("4_86g8w")]
+position = Vector2(-22, 1)
+
+[node name="zombie2mission4" parent="inimigos" instance=ExtResource("4_86g8w")]
+position = Vector2(11, 1)
+
+[node name="zombie2mission5" parent="inimigos" instance=ExtResource("4_86g8w")]
+position = Vector2(-6, 4)
+
+[node name="zombie2mission6" parent="inimigos" instance=ExtResource("4_86g8w")]
+position = Vector2(31, 8)
+
+[node name="zombie2mission7" parent="inimigos" instance=ExtResource("4_86g8w")]
+position = Vector2(50, 13)
+
+[node name="zombie2mission8" parent="inimigos" instance=ExtResource("4_86g8w")]
+position = Vector2(61, 26)
+
+[node name="zombie2mission9" parent="inimigos" instance=ExtResource("4_86g8w")]
+position = Vector2(-72, 26)
+
+[node name="zombie2mission10" parent="inimigos" instance=ExtResource("4_86g8w")]
+position = Vector2(-45, 21)
+
+[node name="zombie2mission11" parent="inimigos" instance=ExtResource("4_86g8w")]
+position = Vector2(-16, 19)
+
+[node name="zombie2mission12" parent="inimigos" instance=ExtResource("4_86g8w")]
+position = Vector2(7, 25)
+
+[node name="zombie2mission13" parent="inimigos" instance=ExtResource("4_86g8w")]
+position = Vector2(35, 30)
+
+[node name="zombie2mission14" parent="inimigos" instance=ExtResource("4_86g8w")]
+position = Vector2(64, 37)
+
+[node name="zombiemission" parent="inimigos" instance=ExtResource("5_l17f6")]
+position = Vector2(-57, 83)
+
+[node name="zombiemission2" parent="inimigos" instance=ExtResource("5_l17f6")]
+position = Vector2(-38, 74)
+
+[node name="zombiemission3" parent="inimigos" instance=ExtResource("5_l17f6")]
+position = Vector2(-18, 73)
+
+[node name="zombiemission4" parent="inimigos" instance=ExtResource("5_l17f6")]
+position = Vector2(7, 71)
+
+[node name="zombiemission5" parent="inimigos" instance=ExtResource("5_l17f6")]
+position = Vector2(27, 70)
+
+[node name="zombiemission6" parent="inimigos" instance=ExtResource("5_l17f6")]
+position = Vector2(47, 70)
+
+[node name="zombiemission7" parent="inimigos" instance=ExtResource("5_l17f6")]
+position = Vector2(69, 83)
+
+[node name="zombiemission8" parent="inimigos" instance=ExtResource("5_l17f6")]
+position = Vector2(-69, 55)
+
+[node name="zombiemission9" parent="inimigos" instance=ExtResource("5_l17f6")]
+position = Vector2(-46, 45)
+
+[node name="zombiemission10" parent="inimigos" instance=ExtResource("5_l17f6")]
+position = Vector2(-20, 41)
+
+[node name="zombiemission11" parent="inimigos" instance=ExtResource("5_l17f6")]
+position = Vector2(6, 35)
+
+[node name="zombiemission12" parent="inimigos" instance=ExtResource("5_l17f6")]
+position = Vector2(28, 36)
+
+[node name="zombiemission13" parent="inimigos" instance=ExtResource("5_l17f6")]
+position = Vector2(56, 35)
+
+[node name="Player" parent="." instance=ExtResource("6_mw8g1")]
+position = Vector2(-3, 93)
+
+[node name="dungeon_3_2" parent="." instance=ExtResource("7_uyrej")]
+position = Vector2(-1, 129)
+scale = Vector2(2.01939, 0.836213)

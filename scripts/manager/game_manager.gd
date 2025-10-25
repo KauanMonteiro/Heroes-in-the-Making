@@ -10,11 +10,21 @@ var from_scene
 
 var last_position = null
 
-func respawn_at_checkpoint():
-	if last_position:
-		global_position = last_position
-		call_deferred("_reload_current_scene")
+var key = false
+
+var inimigos_mortos_por_sala := {}
+
+func matar_inimigo(cena: String, id: String):
+	if not inimigos_mortos_por_sala.has(cena):
+		inimigos_mortos_por_sala[cena] = {}
+	inimigos_mortos_por_sala[cena][id] = true
+	print("[GameManager] Inimigo morto: ", cena, " - ", id)  # Log detalhado
+
+func esta_morto(cena: String, id: String) -> bool:
+	var morto = inimigos_mortos_por_sala.get(cena, {}).get(id, false)
+	print("[GameManager] Verificando morte: ", cena, " - ", id, " = ", morto)
+	return morto
 
 func _reload_current_scene():
 	get_tree().reload_current_scene()
-	
+

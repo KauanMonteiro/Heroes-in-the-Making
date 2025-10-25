@@ -1,0 +1,58 @@
+[gd_scene load_steps=8 format=3 uid="uid://bw0gcpj5vb4l8"]
+
+[ext_resource type="Texture2D" uid="uid://bv5ds0jo5cycd" path="res://assets/tilesets/Pixel Crawler - Free Pack 2.0.4/Pixel Crawler - Free Pack/Environment/Props/Static/Esoteric.png" id="1_kt2u3"]
+[ext_resource type="Script" path="res://scripts/objects/letter_1.gd" id="1_umms2"]
+[ext_resource type="FontFile" uid="uid://cxfl371v85e08" path="res://assets/fonts/hf-free-complete/equipment-pro-v1.1/EquipmentPro.ttf" id="2_b2yc3"]
+[ext_resource type="Texture2D" uid="uid://c08limi3kpb2r" path="res://assets/ui/Individual Icons/keyboard_15.png" id="3_i2j44"]
+[ext_resource type="Texture2D" uid="uid://dwh27syqaocc5" path="res://assets/ui/Individual Icons/keyboard_116.png" id="4_gg25n"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_twb3t"]
+radius = 38.1182
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_as0h3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_i2j44")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_gg25n")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="letter1" type="Area2D" node_paths=PackedStringArray("_HUD")]
+script = ExtResource("1_umms2")
+_HUD = NodePath("HUD")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_twb3t")
+
+[node name="Node2D" type="Node2D" parent="."]
+scale = Vector2(0.5, 0.5)
+
+[node name="Label" type="Label" parent="Node2D"]
+offset_left = -28.0
+offset_top = -36.0
+offset_right = 39.0
+offset_bottom = -13.0
+theme_override_fonts/font = ExtResource("2_b2yc3")
+text = "interagir"
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Node2D"]
+position = Vector2(38, -28)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_as0h3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_kt2u3")
+region_enabled = true
+region_rect = Rect2(34.0529, 129.432, 10.5402, 13.3779)
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
