@@ -1,6 +1,8 @@
 extends Control
 class_name DecisionDialogScreen
+
 signal option_selected(result)
+signal event_triggered(event_name)  # <- novo sinal
 
 var _step := 0.05
 var _id := 0
@@ -17,7 +19,7 @@ func _ready() -> void:
 	# Esconder template inicialmente
 	if _option_button_template:
 		_option_button_template.hide()
-		$AnimatedSprite2D.play("default")
+	$AnimatedSprite2D.play("default")
 	_initialize_dialog()
 
 func _initialize_dialog() -> void:
@@ -31,13 +33,21 @@ func _initialize_dialog() -> void:
 	_name.text = current_data.get("title", "")
 	_dialog.text = current_data.get("dialog", "")
 	_faceset.texture = load(current_data.get("faceset", ""))
-	
+
+	# Novo: Disparar evento se existir
+	if current_data.has("event"):
+		event_triggered.emit(current_data["event"])
 	
 	# Mostrar opções se existirem
 	if current_data.has("options"):
 		_show_options(current_data["options"])
 	else:
 		is_waiting_choice = false
+		# Se não houver opções, digitar texto
+		_dialog.visible_characters = 0
+		while _dialog.visible_ratio < 1:
+			await get_tree().create_timer(_step)
+			_dialog.visible_characters += 1
 
 func _show_options(options: Array) -> void:
 	is_waiting_choice = true

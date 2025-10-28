@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://d32am6hcn58lp"]
+
+[ext_resource type="Script" path="res://scripts/UI/shop_menu.gd" id="1_abyug"]
+
+[node name="ShopMenu" type="CanvasLayer"]
+script = ExtResource("1_abyug")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.545098)
+
+[node name="ItemsContainer" type="VBoxContainer" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2

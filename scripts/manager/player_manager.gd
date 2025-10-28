@@ -1,8 +1,8 @@
 extends Node
 
 var life_bonus := 0
-var dano_max := 90
-var dano_min := 90
+var dano_max :=2
+var dano_min := 1
 var life := 3  
 var is_die := false
 var coins := 0
