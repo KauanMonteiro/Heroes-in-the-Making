@@ -8,7 +8,7 @@ var is_die := false
 var coins := 0
 
 func get_vida_maxima() -> int:
-	return 3 + life_bonus+ life
+	return 3 + life_bonus + life
 
 func _process(delta):
 	life = min(life, get_vida_maxima())

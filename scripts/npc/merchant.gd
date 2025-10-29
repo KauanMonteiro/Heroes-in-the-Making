@@ -8,26 +8,30 @@ var merchant_items = [
 	{
 		"name": "Espada Longa",
 		"price": 75,
-		"desc": "Uma espada longa e resistente, perfeita para aventureiros.",
+		"desc": "Uma espada longa e resistente.",
 		"icon": preload("res://assets/NPC/Gipsy/Generic demon axe.png"),
-		"quantity": 10  # Quantidade de itens disponíveis
-	},
-	{
-		"name": "Escudo de Ferro",
-		"price": 50,
-		"desc": "Um escudo sólido que protege contra ataques frontais.",
-		"icon": preload("res://assets/NPC/Gipsy/Generic demon axe.png"),
-		"quantity": 5  # Quantidade de itens disponíveis
+		"quantity": 10,
+		"type": "equipable"
 	},
 	{
 		"name": "Poção de Vida",
 		"price": 25,
-		"desc": "Restaura parte da vida do jogador.",
-		"icon": preload("res://assets/NPC/Gipsy/Generic demon axe.png"),
-		"quantity": 20  # Quantidade de itens disponíveis
+		"desc": "Restaura 50 de vida do jogador.",
+		"icon": preload("res://assets/ui/75wnP9 (cópia).png"),
+		"quantity": 20,
+		"type": "consumable",
+		"effect": "potionheal1"
+	},
+	{
+		"name": "Poção de Velocidade",
+		"price": 30,
+		"desc": "Aumenta a velocidade do jogador por 10 segundos.",
+		"icon": preload("res://assets/ui/Lucid-V1.2/Lucid V1.2/PNG/Flat/16/Backward.png"),
+		"quantity": 15,
+		"type": "consumable",
+		"effect": "potionspeed1"
 	}
 ]
-
 
 var _dialog_data: Dictionary = {
 	0: {
@@ -39,7 +43,7 @@ var _dialog_data: Dictionary = {
 }
 
 var action = false
-var _shop_instance: Node = null  # Instância do shop
+var _shop_instance: Node = null
 
 func _ready():
 	$Node2D.visible = false
@@ -52,19 +56,14 @@ func _process(delta):
 		dialog_instance.data = _dialog_data
 		_HUD.add_child(dialog_instance)
 		action = false
-
-		# Conecta o sinal de fim de diálogo
 		dialog_instance.connect("dialog_finished", Callable(self, "_on_dialog_finished"))
 
 func _on_dialog_finished(dialog_instance):
-	# Abre o shop apenas quando o diálogo terminar
 	for i in dialog_instance.data.values():
 		if i.has("event") and i["event"] == "open":
 			if _shop_instance == null:
 				_shop_instance = SHOP.instantiate()
 				get_tree().current_scene.add_child(_shop_instance)
-
-				# Envia os itens do NPC para o shop
 				if _shop_instance.has_method("set_items"):
 					_shop_instance.set_items(merchant_items)
 
@@ -86,7 +85,6 @@ func _on_detection_body_exited(body):
 		action = false
 		for child in _HUD.get_children():
 			child.queue_free()
-		# Fecha o shop se estiver aberto
 		if _shop_instance != null:
 			_shop_instance.queue_free()
 			_shop_instance = null
