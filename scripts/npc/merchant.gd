@@ -17,7 +17,7 @@ var merchant_items = [
 		"name": "Poção de Vida",
 		"price": 25,
 		"desc": "Restaura 50 de vida do jogador.",
-		"icon": preload("res://assets/ui/75wnP9 (cópia).png"),
+		"icon":preload("res://assets/ui/LifePotion.png") ,
 		"quantity": 20,
 		"type": "consumable",
 		"effect": "potionheal1"
@@ -26,7 +26,7 @@ var merchant_items = [
 		"name": "Poção de Velocidade",
 		"price": 30,
 		"desc": "Aumenta a velocidade do jogador por 10 segundos.",
-		"icon": preload("res://assets/ui/Lucid-V1.2/Lucid V1.2/PNG/Flat/16/Backward.png"),
+		"icon":preload("res://assets/ui/SpeedPotion.png") ,
 		"quantity": 15,
 		"type": "consumable",
 		"effect": "potionspeed1"
