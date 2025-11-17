@@ -574,7 +574,7 @@ run_side = true
 _HUD = NodePath("HUD")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." groups=["nobleman"]]
-position = Vector2(1074, -220.947)
+position = Vector2(0, 29)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 position = Vector2(0, 13.25)
@@ -592,7 +592,7 @@ libraries = {
 curve = SubResource("Curve2D_0gxbr")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
-position = Vector2(1074, -220.947)
+position = Vector2(0, 29)
 rotates = false
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Path2D/PathFollow2D"]

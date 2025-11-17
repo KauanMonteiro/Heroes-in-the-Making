@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dtar13qxx34e8"]
+
+[ext_resource type="Script" path="res://scripts/objects/mission_4_1_complet_.gd" id="1_nnqjo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2fh7n"]
+size = Vector2(18.4706, 10.0588)
+
+[node name="mission4_1complet_" type="Area2D"]
+script = ExtResource("1_nnqjo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_2fh7n")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

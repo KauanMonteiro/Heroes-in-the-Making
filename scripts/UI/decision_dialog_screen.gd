@@ -2,7 +2,7 @@ extends Control
 class_name DecisionDialogScreen
 
 signal option_selected(result)
-signal event_triggered(event_name)  # <- novo sinal
+signal event_triggered(event_name)  
 
 var _step := 0.05
 var _id := 0

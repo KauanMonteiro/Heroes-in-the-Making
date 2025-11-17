@@ -49,7 +49,7 @@ func _ready():
 func _process(delta):
 	if action and Input.is_action_just_pressed("interact"):
 		$Node2D.visible = false
-		var _new_dialog: DialogScreen = _DIALOG_SCREEN.instantiate()
+		var _new_dialog:  = _DIALOG_SCREEN.instantiate()
 		_new_dialog.data = _dialog_data
 		_HUD.add_child(_new_dialog)
 		action = false 

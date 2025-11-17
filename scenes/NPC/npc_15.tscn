@@ -1,0 +1,70 @@
+[gd_scene load_steps=9 format=3 uid="uid://dkn6j355bbnua"]
+
+[ext_resource type="Texture2D" uid="uid://b2xn1kuockhl0" path="res://assets/NPC/32rogues-0.5.0/32rogues/rogues.png" id="1_5pqx4"]
+[ext_resource type="Script" path="res://scripts/npc/npc_15.gd" id="1_d3orp"]
+[ext_resource type="FontFile" uid="uid://cxfl371v85e08" path="res://assets/fonts/hf-free-complete/equipment-pro-v1.1/EquipmentPro.ttf" id="2_rtnwm"]
+[ext_resource type="Texture2D" uid="uid://c08limi3kpb2r" path="res://assets/ui/Individual Icons/keyboard_15.png" id="3_dceih"]
+[ext_resource type="Texture2D" uid="uid://dwh27syqaocc5" path="res://assets/ui/Individual Icons/keyboard_116.png" id="4_cpq3v"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_k70yu"]
+radius = 43.2897
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ewgmb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_dceih")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_cpq3v")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v3cam"]
+size = Vector2(9, 19)
+
+[node name="npc15" type="StaticBody2D" node_paths=PackedStringArray("_HUD", "_HUDTitler")]
+script = ExtResource("1_d3orp")
+_HUD = NodePath("HUD")
+_HUDTitler = NodePath("CanvasLayer")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_5pqx4")
+region_enabled = true
+region_rect = Rect2(37.7284, 0.621225, 18.7831, 30.8098)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_k70yu")
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="Node2D" type="Node2D" parent="."]
+scale = Vector2(0.5, 0.5)
+
+[node name="Label" type="Label" parent="Node2D"]
+offset_left = -28.0
+offset_top = -36.0
+offset_right = 39.0
+offset_bottom = -13.0
+theme_override_fonts/font = ExtResource("2_rtnwm")
+text = "interagir"
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Node2D"]
+position = Vector2(38, -28)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_ewgmb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 4.5)
+shape = SubResource("RectangleShape2D_v3cam")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

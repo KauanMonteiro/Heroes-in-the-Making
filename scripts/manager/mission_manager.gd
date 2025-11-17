@@ -17,14 +17,22 @@ var collectedbook = false
 var devil_end_talk = false
 
 #mission3
-var mission3accept = true
-var mission3complet = true
+var mission3accept = false
+var mission3complet = false
 var monstercount := 0
 var mission3rewardGiven = false
 #mission 3.1
 var mission3_1accept = false
 var mission3_1complet = false
 
+#mission4
+var mission4accept := false
+var mission4complet := false
+var orccount := 0             
+var mission4rewardGiven := false
+#mission 4.1
+var mission4_1complet = false
+var reached_marker = false
 
 func _process(delta):
 	if PlayerManager.is_die:
@@ -32,11 +40,11 @@ func _process(delta):
 	mission1()
 	mission2()
 	mission3()
+	mission4()
 	
 func mission3():
 	if monstercount == 107:
 		mission3complet = true
-
 
 func mission1():
 	if goblincount == 10:
@@ -49,3 +57,7 @@ func ResetMission():
 	if !mission1complet:
 		goblincount = 0
 		PlayerManager.is_die = false
+
+func mission4():
+	if orccount == 1:
+		mission4complet = true
