@@ -59,5 +59,5 @@ func ResetMission():
 		PlayerManager.is_die = false
 
 func mission4():
-	if orccount == 1:
+	if orccount == 10:
 		mission4complet = true
