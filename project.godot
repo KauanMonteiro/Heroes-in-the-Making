@@ -22,6 +22,7 @@ PlayerManager="*res://scripts/manager/player_manager.gd"
 MissionManager="*res://scripts/manager/mission_manager.gd"
 GlobalUi="*res://scripts/manager/GlobalUI.gd"
 EffectManager="*res://scripts/manager/EffectManager.gd"
+SaveManager="*res://scripts/manager/SaveManager.gd"
 
 [display]
 

@@ -2092,7 +2092,7 @@ states/run/node = SubResource("AnimationNodeBlendSpace2D_t8gfx")
 states/run/position = Vector2(367, 174)
 graph_offset = Vector2(-139, -39)
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("_animation_tree")]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("_animation_tree") groups=["player"]]
 collision_mask = 5
 script = ExtResource("1_bnlev")
 _animation_tree = NodePath("AnimationTree")

@@ -1,0 +1,49 @@
+[game]
+
+current_scene="res://levelscenes/level_1.tscn"
+player_position_x=681.276
+player_position_y=-39.7558
+
+[managers]
+
+MissionManager={
+"collectedbook": false,
+"complet_dugeon": false,
+"devil_end_talk": false,
+"goblincount": 0,
+"mission1accept": false,
+"mission1complet": false,
+"mission1rewardGiven": false,
+"mission2accept": false,
+"mission2complet": false,
+"mission2rewardGiven": false,
+"mission3_1accept": false,
+"mission3_1complet": false,
+"mission3accept": false,
+"mission3complet": false,
+"mission3rewardGiven": false,
+"mission4_1complet": false,
+"mission4accept": false,
+"mission4complet": false,
+"mission4rewardGiven": false,
+"monstercount": 0,
+"orccount": 0,
+"reached_marker": false
+}
+PlayerManager={
+"coins": 0,
+"dano_max": 2,
+"dano_min": 1,
+"is_die": false,
+"life": 3,
+"life_bonus": 0
+}
+GameManager={
+"die_fire_slime": false,
+"inimigos_mortos_por_sala": {},
+"key": false,
+"last_position": Vector2(196, -20.0001),
+"puzzle1": false,
+"puzzle2": false,
+"puzzle3": false
+}
