@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://ct1ty0hueiwqo"]
+[gd_scene load_steps=30 format=3 uid="uid://ct1ty0hueiwqo"]
 
 [ext_resource type="PackedScene" uid="uid://ui5mhnb848of" path="res://scenes/Player/player.tscn" id="1_1hu1r"]
 [ext_resource type="Script" path="res://scripts/manager/levels.gd" id="1_bkv1x"]
@@ -29,7 +29,6 @@
 [ext_resource type="PackedScene" uid="uid://lcvn11fpdyup" path="res://scenes/objects/interactive/teleportation_level_2.tscn" id="26_6ywgd"]
 [ext_resource type="PackedScene" uid="uid://dlcyocwbnq5yy" path="res://scenes/UI/coins.tscn" id="27_75kmn"]
 [ext_resource type="PackedScene" uid="uid://bs2rvlspi7gpa" path="res://scenes/objects/interactive/checkpoint.tscn" id="28_osija"]
-[ext_resource type="PackedScene" uid="uid://c04fc7h56gaqk" path="res://scenes/UI/save_and_load.tscn" id="30_4p8j4"]
 
 [node name="level1" type="Node2D"]
 position = Vector2(1, -1)
@@ -213,5 +212,3 @@ scale = Vector2(3.88, 1)
 [node name="checkpoint6" parent="." instance=ExtResource("28_osija")]
 position = Vector2(1181, -1539)
 scale = Vector2(3.88, 1)
-
-[node name="SaveAndLoad" parent="." instance=ExtResource("30_4p8j4")]

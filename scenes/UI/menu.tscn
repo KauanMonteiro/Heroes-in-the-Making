@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://c680tc8xb5rx0"]
+
+[ext_resource type="Script" path="res://scripts/UI/Menu.gd" id="1_7vwyo"]
+
+[node name="Menu" type="CanvasLayer"]
+script = ExtResource("1_7vwyo")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Start" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Exit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+
+[connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]
