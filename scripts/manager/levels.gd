@@ -7,9 +7,3 @@ func _ready():
 			$Player.global_position = spawn_pos.global_position
 		else:
 			print("Posição de spawn não encontrada: ", GameManager.from_scene + "Pos")
-
-func _enter_tree():
-	if GameManager.last_position:
-		$Player.global_position = GameManager.last_position
-
-

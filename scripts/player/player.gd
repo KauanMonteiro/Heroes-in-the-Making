@@ -125,4 +125,4 @@ func push() -> void:
 		var collision := get_slide_collision(i)
 		var collider = collision.get_collider()
 		if collider is PushableObject or collider is PushableObjectPuzzle:
-			collider.slide_object(-collision.get_normal() * 80)
+			collider.slide_object(-collision.get_normal())

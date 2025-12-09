@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://ct1ty0hueiwqo"]
+[gd_scene load_steps=31 format=3 uid="uid://ct1ty0hueiwqo"]
 
 [ext_resource type="PackedScene" uid="uid://ui5mhnb848of" path="res://scenes/Player/player.tscn" id="1_1hu1r"]
 [ext_resource type="Script" path="res://scripts/manager/levels.gd" id="1_bkv1x"]
@@ -29,6 +29,7 @@
 [ext_resource type="PackedScene" uid="uid://lcvn11fpdyup" path="res://scenes/objects/interactive/teleportation_level_2.tscn" id="26_6ywgd"]
 [ext_resource type="PackedScene" uid="uid://dlcyocwbnq5yy" path="res://scenes/UI/coins.tscn" id="27_75kmn"]
 [ext_resource type="PackedScene" uid="uid://bs2rvlspi7gpa" path="res://scenes/objects/interactive/checkpoint.tscn" id="28_osija"]
+[ext_resource type="PackedScene" uid="uid://didumedngv3ih" path="res://scenes/UI/pause_menu.tscn" id="30_1cu0a"]
 
 [node name="level1" type="Node2D"]
 position = Vector2(1, -1)
@@ -174,11 +175,11 @@ position = Vector2(1209, -2148)
 scale = Vector2(1.5, 1.5)
 
 [node name="FireSlime" parent="." instance=ExtResource("24_44n6o")]
-position = Vector2(1193, -1954)
+position = Vector2(1189, -1914)
 scale = Vector2(3.5, 3.5)
 
 [node name="Player" parent="." instance=ExtResource("1_1hu1r")]
-position = Vector2(195, -19.0001)
+position = Vector2(1128, -2208)
 scale = Vector2(1.4, 1.4)
 
 [node name="TileMap2" parent="." instance=ExtResource("2_uws4v")]
@@ -212,3 +213,5 @@ scale = Vector2(3.88, 1)
 [node name="checkpoint6" parent="." instance=ExtResource("28_osija")]
 position = Vector2(1181, -1539)
 scale = Vector2(3.88, 1)
+
+[node name="pause_menu" parent="." instance=ExtResource("30_1cu0a")]

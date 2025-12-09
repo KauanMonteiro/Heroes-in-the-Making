@@ -48,27 +48,35 @@ func save_game(current_scene_path: String, player_position: Vector2):
 func load_game() -> bool:
 	var save_file = ConfigFile.new()
 	
-	# Tenta carregar o arquivo de save
 	if save_file.load(SAVE_PATH) != OK:
 		print("Nenhum save encontrado ou erro ao carregar.")
 		return false
 	
-	# Carrega cena atual e posição do jogador
 	var current_scene = save_file.get_value("game", "current_scene", "res://world.tscn")
 	var pos_x = save_file.get_value("game", "player_position_x", 0)
 	var pos_y = save_file.get_value("game", "player_position_y", 0)
 	GameManager.last_position = Vector2(pos_x, pos_y)
-	
-	# Carrega os managers
+
+	# Carrega dados dos managers
 	for manager in managers_to_save:
 		var section_name = manager.name if manager.name else manager.get_class()
 		if save_file.has_section_key("managers", section_name):
 			var data = save_file.get_value("managers", section_name, {})
 			for key in data.keys():
-				if manager.has_method("set") or key in manager:
-					manager.set(key, data[key])
+				manager.set(key, data[key])
 	
-	# Muda para a cena salva
+	# Troca a cena
 	get_tree().change_scene_to_file(current_scene)
+
+	# Aguarda a cena abrir
+	await get_tree().tree_changed
+
+	# Aplica posição real no player
+	var player = get_tree().current_scene.get_node("Player")
+	if player:
+		player.global_position = GameManager.last_position
+		print("Player reposicionado após carregar:", GameManager.last_position)
+
 	print("Jogo carregado com sucesso!")
 	return true
+
